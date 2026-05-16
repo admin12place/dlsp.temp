@@ -24,7 +24,7 @@ span.divite img {
   display: block;
   width: clamp(100px, 10vw, 500px);
   height: auto;
-  margin: 2vw auto;
+  margin: 2% auto;
 }
 
 .section-title {
@@ -143,6 +143,55 @@ header .main-menu ul.menu-items li.display-mobile {
   margin: 3vw auto;
 }
 
+#rooms .section-title {
+  margin: 5vw 0 3vw;
+}
+#rooms .impair-room, #rooms .pair-room {
+  display: flex;
+  align-items: center;
+  margin: 3vw 0 2vw 0;
+}
+#rooms .impair-room .text-room-contain, #rooms .pair-room .text-room-contain {
+  min-width: 40%;
+  padding: 0 1vw;
+}
+#rooms .impair-room .text-room-contain h4, #rooms .pair-room .text-room-contain h4 {
+  text-align: center;
+  margin: 1vw 2vw;
+  font-size: clamp(1.5rem, 1.7vw, 7rem);
+}
+#rooms .impair-room .text-room-contain ul, #rooms .pair-room .text-room-contain ul {
+  list-style: none;
+}
+#rooms .impair-room .text-room-contain ul li, #rooms .pair-room .text-room-contain ul li {
+  margin: 0.4vw 0;
+  font-size: clamp(12px, 1.1vw, 16px);
+}
+#rooms .impair-room .text-room-contain .room-text, #rooms .pair-room .text-room-contain .room-text {
+  line-height: 1.3em;
+  font-size: clamp(12px, 1.1vw, 16px);
+}
+#rooms .impair-room .img-room-contain, #rooms .pair-room .img-room-contain {
+  min-width: 60%;
+}
+#rooms .impair-room .img-room-contain .img-room, #rooms .pair-room .img-room-contain .img-room {
+  max-width: 100%;
+  height: auto;
+  border: 0px solid;
+  border-radius: 5vw;
+}
+#rooms .impair-room {
+  flex-direction: row;
+}
+#rooms .pair-room {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 950px) {
+  #rooms .impair-room, #rooms .pair-room {
+    flex-direction: column;
+  }
+}
 @media (max-width: 768px) {
   body {
     width: 100%;
