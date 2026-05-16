@@ -2,13 +2,104 @@ body {
   font-family: "Special Elite", sans-serif;
   font-weight: 400;
   font-style: normal;
+  width: 80%;
+  max-width: 1350px;
+  margin: auto;
 }
 
 p {
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 18px);
   color: #2a3631;
 }
 
-header h1 {
-  font-size: 4vw;
+h1, h2, h3 {
+  text-shadow: 2px 2px 5px #577066;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  padding: 20px 1vw 0 1vw;
+  background: linear-gradient(to bottom, #b8d8c9, #ffffff);
+}
+header .logo-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+header .logo-title a img {
+  width: clamp(6rem, 8vw, 9rem);
+  height: auto;
+}
+header .logo-title .titles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+header .logo-title .titles h1 {
+  font-size: clamp(1rem, 1.45vw, 5rem);
+  margin: 0;
+}
+header .logo-title .titles h2 {
+  font-size: clamp(1.5rem, 2vw, 7rem);
+  margin: 0;
+}
+header .logo-title .details {
+  font-size: clamp(12px, 1vw, 14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+header .logo-title .details .adresse {
+  text-align: center;
+}
+header .logo-title .details .phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+header .logo-title .details .phone .phone-number {
+  font-size: clamp(13px, 1.2vw, 16px);
+}
+header .main-menu ul.menu-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1vw 0;
+  margin: 0 1vw;
+  font-family: Montserrat, sans-serif;
+}
+header .main-menu ul.menu-items li {
+  list-style: none;
+}
+header .main-menu ul.menu-items li a {
+  color: #000000;
+  font-size: clamp(13px, 1.2vw, 18px);
+}
+header .main-menu ul.menu-items li a:hover {
+  text-shadow: 2px 2px 5px #577066;
+}
+header .main-menu ul.menu-items li a .icons:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  header {
+    padding: 20px;
+  }
+  header .logo-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }/*# sourceMappingURL=styles.css.map */

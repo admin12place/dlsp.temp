@@ -1,21 +1,124 @@
 
 $main-text-color: #2a3631;
+$title-shadow: #577066;
+$main-bg-color: #b8d8c9;
+$white-white: #ffffff;
+$white-cream: #e9e4cf;
+$black-black: #000000;
 
 body {
+    //mise en forme du texte
     font-family: "Special Elite", sans-serif;
     font-weight: 400;
     font-style: normal;
+
+    //positionnement & taille
+    width: 80%;
+    max-width: 1350px;
+    margin: auto;
+
 }
 
 p {
-    font-size: 16px;
+    font-size: clamp( 14px, 1.2vw, 18px);
     color: $main-text-color;
 }
 
+h1, h2, h3 {
+    text-shadow: 2px 2px 5px $title-shadow;
+}
+
+a {
+    text-decoration: none;
+}
+
 header {
-    h1 {
-    font-size: 4vw;
+    padding: 20px 1vw 0 1vw;
+    background: linear-gradient(to bottom, $main-bg-color, $white-white) ;
+    .logo-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        a img{
+            width: clamp(6rem, 8vw, 9rem);
+            height: auto;
+        }
+        .titles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            h1 {
+                font-size: clamp( 1rem, 1.45vw, 5rem );
+                margin: 0;
+            }
+            h2 {
+                font-size: clamp(1.5rem, 2vw, 7rem);
+                margin: 0;
+            }
+        }
+        .details {
+            font-size: clamp( 12px, 1vw, 14px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .adresse {
+            text-align: center;
+            }
+            .phone {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                margin-bottom: 5px;
+                .phone-number {
+                    font-size: clamp(13px, 1.2vw, 16px);
+                }
+            }
+        }
+    }
+    .main-menu {
+        ul.menu-items {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 1vw 0;
+            margin: 0 1vw;
+            font-family: Montserrat, sans-serif;
+            li {
+                list-style: none;
+                
+                a {
+                    color: $black-black;
+                    font-size: clamp( 13px, 1.2vw, 18px);
+                    &:hover {
+                        text-shadow: 2px 2px 5px $title-shadow;
+                    }
+                    .icons {
+                        &:hover {
+                            opacity: 0.5;
+                        }
+                    }
+                    
+                }
+            }
+        }
     }
 }
 
+@media (max-width: 768px) {
+    body {
+        width: 100%;
+    }
 
+    header {
+        padding: 20px;
+        .logo-title{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+    }
+}

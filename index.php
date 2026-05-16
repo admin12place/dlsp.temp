@@ -47,7 +47,15 @@
                     <h2>DES LITS SUR LA PLACE</h2>
                     <h1>Chambres d'hôtes en Occitanie</h1>
                 </div>
-                <div class="phone header-phone"><img class="icons" src="./assets/call_icon.png" alt="Téléphone"/>06 41 61 43 44</div>
+                <article class="details">
+                    <div class="phone header-phone">
+                        <img class="icons" src="./assets/call_icon.png" alt="Téléphone"/>
+                        <span class="phone-number">06 41 61 43 44</span>
+                    </div>
+                    <div class="adresse">
+                        <span>12 place de la croix<br/>34600 HÉRÉPIAN</span>
+                    </div>
+                </articles>
             </div>
 
             <nav class="main-menu">
