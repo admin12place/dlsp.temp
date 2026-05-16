@@ -44,7 +44,7 @@
             <div class="logo-title">
                 <a href="#"><img class="logo" src="./images/logo-dlsp-alpha.webp" alt="Logo Des lits sur la place"/></a>
                 <div class="titles">
-                    <h2>DES LITS SUR LA PLACE</h2>
+                    <!--<h2>DES LITS SUR LA PLACE</h2>-->
                     <h1>Chambres d'hôtes en Occitanie</h1>
                 </div>
                 <article class="details">
@@ -60,13 +60,15 @@
 
             <nav class="main-menu">
                 <ul class="menu-items">
-                    <li><a href="#home"><img class="icons" src="./assets/home_icon.png" alt="Page d'accueil" title="Page d'accueil"/></a></li>
-                    <li><a href="#rooms">Les chambres</a></li>
-                    <li><a href="#extras">Les services</a></li>
+                    <li class="display-laptop"><a href="#home"><img class="icons" src="./assets/home_icon.png" alt="Page d'accueil" title="Page d'accueil"/></a></li>
+                    <li class="display-mobile"><a href="#home">Accueil</a></li>
+                    <li><a href="#rooms" title="Découvrez nos chambres">Les chambres</a></li>
+                    <li><a href="#extras" title="Dans votre chambre">Les services</a></li>
                     <li><a href="#biking" title="Bienvenue aux &#10; cyclistes">L'accueil vélo</a></li>
                     <li><a href="#discovering" title="A découvrir">La région</a></li>
-                    <li><a href="#join-us">Réservation Contact</a></li>
-                    <li><a href="#join-us"><img class="icons" src="./assets/map_icon.png" alt="Nous trouver" title="Nous trouver"/></a></li>
+                    <li><a href="#join-us" title="Réserver, nous écrire">Réservation Contact</a></li>
+                    <li class="display-laptop"><a href="#join-us"><img class="icons" src="./assets/map_icon.png" alt="Nous trouver" title="Nous trouver"/></a></li>
+                    <li class="display-mobile"><a href="#join-us">Nous trouver</a></li>
                 </ul>
             </nav>
         </header>
@@ -74,11 +76,11 @@
         <main>
             <section id="presentation">
                 <div class="banner">
-                <h2 class="bannertitle">Des lits sur la place</h2>
-                <h3 class="bannerundertitle">Au coeur du parc du Haut-Languedoc</h3>
+                    <h2 class="section-title">Des lits sur la place</h2>
+                    <h3 class="section-undertitle">au coeur du parc du Haut-Languedoc</h3>
                 </div>
                 <div class="main-text">
-                <p><?php echo $main_text;?></p>
+                    <p><?php echo $main_text;?></p>
                 </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>

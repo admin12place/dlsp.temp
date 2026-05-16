@@ -1,16 +1,19 @@
 
 $main-text-color: #2a3631;
 $title-shadow: #577066;
-$main-bg-color: #b8d8c9;
+$main-bg-color: #ecfaf3;
+$body-bg-color: #fcfefd;
 $white-white: #ffffff;
 $white-cream: #e9e4cf;
 $black-black: #000000;
+$border-light: #999898;
 
 body {
     //mise en forme du texte
     font-family: "Special Elite", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background-color: $body-bg-color;
 
     //positionnement & taille
     width: 80%;
@@ -24,8 +27,27 @@ p {
     color: $main-text-color;
 }
 
-h1, h2, h3 {
+h2, h3, h4 {
+    color: $title-shadow;
     text-shadow: 2px 2px 5px $title-shadow;
+    margin: 0;
+}
+
+span.divite img {
+    display: block;
+    width: clamp(100px, 10vw, 500px);
+    height: auto;
+    margin: 2vw auto;
+}
+
+.section-title {
+    font-size: clamp(1.5rem, 2vw, 7rem);
+    text-align: center;
+}
+
+.section-undertitle {
+    font-size: clamp(1rem, 1.2vw, 5rem);
+    text-align: center;
 }
 
 a {
@@ -33,7 +55,7 @@ a {
 }
 
 header {
-    padding: 20px 1vw 0 1vw;
+    padding: 20px 1vw 20px 1vw;
     background: linear-gradient(to bottom, $main-bg-color, $white-white) ;
     .logo-title {
         display: flex;
@@ -50,8 +72,8 @@ header {
             justify-content: center;
             text-align: center;
             h1 {
-                font-size: clamp( 1rem, 1.45vw, 5rem );
-                margin: 0;
+                font-size: clamp( 1.2rem, 2vw, 5rem );
+                margin: 5px 0;
             }
             h2 {
                 font-size: clamp(1.5rem, 2vw, 7rem);
@@ -88,7 +110,6 @@ header {
             font-family: Montserrat, sans-serif;
             li {
                 list-style: none;
-                
                 a {
                     color: $black-black;
                     font-size: clamp( 13px, 1.2vw, 18px);
@@ -103,7 +124,40 @@ header {
                     
                 }
             }
+            li.display-mobile {
+                display: none;
+            }
         }
+    }
+}
+
+#presentation {
+    .banner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-image: url("/images/20240508_vue_drone.webp");
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: inset 0px 0px 30px 30px rgba(255,255,255,1);
+    }
+    margin-top: 3rem;
+    h2, h3 {
+        text-shadow: none;
+        color: $white-white;
+    }
+    h2 {
+        font-size: 3.5vw;
+    }
+    h3 {
+        font-size: 2vw;
+    }
+    .main-text {
+        width: 90%;
+        margin: 3vw auto;
     }
 }
 
@@ -119,6 +173,27 @@ header {
             flex-direction: column;
             align-items: center;
             gap: 15px;
+        }
+        .main-menu {
+            margin-top: 2em;
+            ul.menu-items {
+                display: flex;
+                flex-wrap: wrap; /*retour à la ligne */
+                gap: 10px;
+                li {
+                    flex: 1 1 200px;
+                    text-align: center;
+                    border: 0.5px solid $border-light;
+                    border-radius: 25px;
+                    max-width: 200px;
+                }
+                li.display-mobile {
+                    display: inline;
+                }
+                li.display-laptop {
+                    display: none;
+                }
+            }
         }
     }
 }

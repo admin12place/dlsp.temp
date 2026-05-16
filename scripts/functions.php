@@ -62,7 +62,7 @@ $tab_rooms = [
 ];
 
 $main_text = 'Vous avez un week-end de libre?<br/>
-<p>Envisager de flâner dans les ruelles des villages de la Haute Vallée, admirer le Canigou depuis la Coquillade, 
+<p>Envisager de flâner dans les ruelles des villages de la Haute Vallée de l\'Orb, admirer le Canigou depuis la Coquillade, 
 randonner sur le Caroux ou vers saint Michel, s\'initier à l\'escalade ou épier les mouflons dans les gorges de 
 Madale, partir à la découverte de vignerons très indépendants et goûter leurs vins aux meilleures tables de la vallée, 
 profiter des derniers rayons du soleil au bord de l\'Orb.</p>
