@@ -162,6 +162,7 @@ header .main-menu ul.menu-items li.display-mobile {
 }
 #rooms .impair-room .text-room-contain ul, #rooms .pair-room .text-room-contain ul {
   list-style: none;
+  padding: 0;
 }
 #rooms .impair-room .text-room-contain ul li, #rooms .pair-room .text-room-contain ul li {
   margin: 0.4vw 0;
@@ -185,6 +186,40 @@ header .main-menu ul.menu-items li.display-mobile {
 }
 #rooms .pair-room {
   flex-direction: row-reverse;
+}
+
+#extras {
+  width: 60%;
+  margin: 4vw auto;
+}
+#extras h3 {
+  margin: 5vw 0 3vw 0;
+}
+#extras .articles {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2vw;
+}
+#extras .articles .xtra-card {
+  width: 150px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border: 2px solid;
+  border-radius: 5vw;
+}
+#extras .articles .xtra-card .xtra-icon {
+  height: 100px;
+}
+#extras .articles .xtra-card h4 {
+  font-size: 16px;
+  text-align: center;
+  margin: 0 20px;
 }
 
 @media (max-width: 950px) {
