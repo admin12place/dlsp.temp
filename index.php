@@ -145,6 +145,7 @@
                         <h4>Terrasse</h4>
                     </article>
                 </div>
+                <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
                 
             <section id="discovering">
@@ -156,10 +157,12 @@
                     <img class="slider-image" src="/images/slider/fleurs3028.webp" alt="Découvrir le Parc"/>
                     <div class="arrows">
                         <img class="arrow arrow_left"  src="./assets/arrow_left.png" alt="Image précédente"/>
+                        <span id="tag-line">Découvrir le Parc du Haut-Languedoc</span>
 			            <img class="arrow arrow_right"  src="./assets/arrow_right.png" alt="Image suivante"/>
                     </div>
-                    <p id="tag-line">Découvrir le Parc du Haut-Languedoc</p>
+                    
                 </div>
+                <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
 
             <section id="join-us">
@@ -171,7 +174,7 @@
         </main>
 
         <footer>
-        <span>&#xA9; des lits sur la place 2026</span>
+        <span>&#xA9; des lits sur la place 2026</span><!--Le sigle cpoyright en debut de balise-->
         </footer>
     
     <script src="./scripts/script.js"></script>

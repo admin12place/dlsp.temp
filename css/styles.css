@@ -10,8 +10,9 @@ body {
 }
 
 p {
-  font-size: clamp(14px, 1.2vw, 18px);
+  font-size: clamp(14px, 1.3vw, 18px);
   color: #2a3631;
+  line-height: 1.5vw;
 }
 
 h2, h3, h4 {
@@ -201,6 +202,7 @@ header .main-menu ul.menu-items li.display-mobile {
   flex-direction: row;
   flex-wrap: wrap;
   gap: 2vw;
+  margin-bottom: 3vw;
 }
 #extras .articles .xtra-card {
   width: 150px;
@@ -220,6 +222,36 @@ header .main-menu ul.menu-items li.display-mobile {
   font-size: 16px;
   text-align: center;
   margin: 0 20px;
+}
+
+#discovering #slider {
+  position: relative;
+  left: 50%;
+  transform: translateX(-40%);
+}
+#discovering #slider .arrows {
+  position: absolute;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 50%;
+  transform: translateY(40%);
+}
+#discovering #slider .arrows #tag-line {
+  font-size: clamp(12px, 2vw, 50px);
+  color: #ffffff;
+  font-weight: 700;
+}
+#discovering #slider .arrows img.arrow {
+  height: clamp(40px, 4vw, 120px);
+  margin: 0 1vw;
+}
+#discovering #slider .arrows img.arrow:hover {
+  cursor: pointer;
+}
+#discovering #slider .slider-image {
+  width: 80%;
 }
 
 @media (max-width: 950px) {
