@@ -47,6 +47,8 @@ const nbSlides = slides.length;
 const bannerImg = document.querySelector('.slider-image');
 const tagLine = document.getElementById('tag-line');
 
+const slider = document.getElementById('slider');//
+
 let index = 0;//Index de suivi des fleches
 
 //Incrémentation du slider (fleche de droite)
@@ -56,7 +58,6 @@ arrowRight.addEventListener('click', () => {
         index = 0;
 	}
 	updateSlide(index)
-	console.log(index)
 })
 
 //décrémentation du slider (fleche de gauche)
@@ -69,22 +70,9 @@ arrowLeft.addEventListener('click', () => {
     console.log(index)
 })
 
-/*function updateSlide(i) {
-	// fade
-	bannerImg.classList.add('fade');
-	tagLine.classList.add('fade');
-
-	setTimeout(() => {
-    // changement de contenu
-    bannerImg.src = slides[i].image;
-    tagLine.innerHTML = slides[i].tagLine;
-    
-    // fade-in
-    bannerImg.classList.remove('fade');
-    tagLine.classList.remove('fade');
-    }, 600);} // même durée que le CSS*/
-
 function updateSlide(i) {
+
+	slider.style.opacity = 0.7;
 
     // fade-out
     bannerImg.classList.add('fade');
@@ -105,6 +93,7 @@ function updateSlide(i) {
             tagLine.classList.remove('fade');
 
         };
+		slider.style.opacity = 1;
 
-    }, 400);
+    }, 300);
 }

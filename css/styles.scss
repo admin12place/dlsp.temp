@@ -25,7 +25,7 @@ body {
 p {
     font-size: clamp( 14px, 1.3vw, 18px);
     color: $main-text-color;
-    line-height: 1.5vw;
+    line-height: 1.7vw;
 }
 
 h2, h3, h4 {
@@ -39,6 +39,12 @@ span.divite img {
     width: clamp(100px, 10vw, 500px);
     height: auto;
     margin: 2% auto;
+}
+
+section {
+    margin-top: 4vw;
+    margin-bottom: 2vw;
+    scroll-margin-top: 35px;
 }
 
 .section-title {
@@ -151,7 +157,7 @@ header {
         color: $white-white;
     }
     h2 {
-        font-size: 3.5vw;
+        font-size: clamp(14px, 3.5vw, 24px);
     }
     h3 {
         font-size: 2vw;
@@ -163,10 +169,10 @@ header {
 }
 
 #rooms {
+    margin: 6vw auto;
     .section-title {
-        margin: 5vw 0 3vw;
+        margin-bottom: 3vw;
     }
-    
     .impair-room, .pair-room {
         display: flex;
         align-items: center;
@@ -212,7 +218,7 @@ header {
 
 #extras {
     width: 60%;
-    margin: 4vw auto;
+    margin: 6vw auto;
     h3 {
         margin: 5vw 0 3vw 0;
     }
@@ -246,10 +252,17 @@ header {
 }
 
 #discovering {
+    margin: 6vw auto;
+    .main-text {
+        width: 90%;
+        margin: auto;
+    }
     #slider {
+        width: 100%;
         position: relative;
         left:50%;
         transform: translateX(-40%);
+        transition: opacity 0.7s ease;
         .arrows {
             position: absolute;
             width: 80%;
@@ -258,7 +271,6 @@ header {
             justify-content: space-between;
             bottom: 50%; transform: translateY(40%);
             #tag-line {
-                //bottom: 50%;
                 font-size: clamp(12px, 2vw, 50px);
                 color: $white-white;
                 font-weight: 700;
@@ -266,22 +278,101 @@ header {
             img.arrow {
                 height: clamp(40px, 4vw, 120px);
                 margin: 0 1vw;
+                
                 &:hover{
                     cursor: pointer;
                 }
             }
         }
-        
         .slider-image {
             width: 80%;
+            border-radius: 5vw;
+            background-color: #000000;
         }
     }
 }
+
+#join-us {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 6vw auto;
+    .place-map {
+        display: flex;
+        gap: 2vw;
+        
+        iframe {
+            width: 40vw;
+            height: 20vw;
+            border-radius: 3vw;
+        }
+        .map-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            max-width: 50%;
+            list-style: none;
+            font-size: clamp(14px, 1.3vw, 18px);
+            line-height: 20px;
+            li {
+                margin-bottom: 1.2vw;
+            }
+        }
+    }
+    .contact {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 25px;
+        margin-top: 3vw;
+        flex-wrap: wrap;
+        .contact-card {
+            width: 280px;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid;
+            border-radius: 5vw;
+            .contact-icon {
+            height: 100px;
+            }
+        h4 {
+            font-size: 16px;
+            text-align: center;
+            margin: 0 20px
+            p {
+                font-size: clamp(12px, 1vw, 16px);
+                }
+            }
+        }
+    }
+}
+
 
 @media (max-width: 950px) {
     #rooms {
         .impair-room, .pair-room {
         flex-direction: column;
+        }
+    }
+    p {
+        line-height: 20px;
+    }
+    #join-us {
+        .place-map {
+            flex-direction: column;
+            align-items: center;
+            iframe {
+                width: 90%;
+                min-height: 200px;
+            }
+            .map-text {
+                max-width: 90%;
+            }
         }
     }
 }
@@ -322,4 +413,38 @@ header {
             }
         }
     }
+
+    main {
+        #presentation {
+            .banner {
+                height: 60vw;
+                .section-title {
+                    font-size: clamp(18px, 6vw, 48px);
+                }
+                .section-undertitle {
+                    font-size: clamp(14px, 3vw, 36px);
+                }
+            }
+        }
+    }
+    @media (max-width: 530px) {
+        #discovering {
+            display: none;
+        }
+        li:has(a[href="#discovering"]) {
+            display: none;
+        }
+        #extras .articles .xtra-card {
+            height: 60px;
+            width: 60px;
+            h4 {
+                display: none;
+            }
+            img.xtra-icon {
+                height: 45px;
+            }
+            
+        }
+    }
+
 }

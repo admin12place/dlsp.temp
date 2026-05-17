@@ -160,16 +160,48 @@
                         <span id="tag-line">Découvrir le Parc du Haut-Languedoc</span>
 			            <img class="arrow arrow_right"  src="./assets/arrow_right.png" alt="Image suivante"/>
                     </div>
-                    
                 </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
 
+            <section id="biking">
+            <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
+            <span class="divite"><img src="./assets/1131825.png"/></span>
+            </section>
+
             <section id="join-us">
                 <h3 class="section-title">NOUS JOINDRE, NOUS TROUVER</h3>
-                    <div class="">
-                    
-                    </div>
+                <div class="main-text"><p></p></div>
+                <div class="place-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.6698214727203!2d3.114027476857337!3d43.59259327110507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b177f520af9c1b%3A0xf5a0f98b5a9f60cd!2sDes%20lits%20sur%20la%20place!5e0!3m2!1sfr!2sfr!4v1779022750244!5m2!1sfr!2sfr" 
+                        allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <ul class="map-text">
+                        <li>Dépose minute devant le bâtiment.</li>
+                        <li>Parking gratuit à 150 m<br/>(bornes de recharge electrique).</li>
+                        <li>Garage sécurisé pour les vélos.</li>
+                        <li>Tous commerces de proximité.</li>
+                        <li>Voie verte PassaPaïs à 200 m.</li>
+                        <li>Gare de Bédarieux à 3 km.</li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <article class="contact-card">
+                        <img class="contact-icon" src="./assets/letter.svg" alt="Adresse" title="Adresse postale"/>
+                        <h4>Des lits sur la place
+                        <p class="adresse">12place de la croix<br/>34600 HÉRÉPIAN</p></h4>
+                    </article>
+                    <article class="contact-card">
+                        <img class="contact-icon" src="./assets/phone.svg" alt="Téléphone" title="Numéro de téléphone"/>
+                        <h4>+33 (0)6 41 61 43 44</h4>
+                    </article>
+                    <article class="contact-card">
+                        <img class="contact-icon" src="./assets/arobase.svg" alt="Climatisation" title="Adresse mail"/>
+                        <h4>contact@deslitssurlaplace.fr</h4>
+                    </article>
+                </div>
+                <div class="contact-form"></div>
             </section>
         </main>
 
