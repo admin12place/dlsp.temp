@@ -15,6 +15,11 @@ p {
   line-height: 1.7vw;
 }
 
+.cta-phone {
+  font-size: clamp(20px, 1.5vw, 5vw);
+  font-weight: 800;
+}
+
 h2, h3, h4 {
   color: #577066;
   text-shadow: 2px 2px 5px #577066;
@@ -45,6 +50,25 @@ section {
 }
 
 a {
+  text-decoration: none;
+  color: #2a3631;
+}
+
+.back-menu {
+  position: fixed;
+  width: 3%;
+  height: 3vw;
+  bottom: 20px;
+  left: 88%;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  border: 2px solid;
+  border-radius: 999px;
+  border-color: #2a3631;
+  background: #e9e4cf;
+  color: #2a3631;
+  font-size: 3vw;
   text-decoration: none;
 }
 
@@ -279,6 +303,7 @@ header .main-menu ul.menu-items li.display-mobile {
   display: flex;
   flex-direction: column;
   margin: 6vw auto;
+  align-items: center;
 }
 #join-us .place-map {
   display: flex;
@@ -307,7 +332,7 @@ header .main-menu ul.menu-items li.display-mobile {
   flex-direction: row;
   justify-content: center;
   gap: 25px;
-  margin-top: 3vw;
+  margin: 3vw 0;
   flex-wrap: wrap;
 }
 #join-us .contact .contact-card {
@@ -319,6 +344,7 @@ header .main-menu ul.menu-items li.display-mobile {
   align-items: center;
   gap: 10px;
   border: 2px solid;
+  border-color: #2a3631;
   border-radius: 5vw;
 }
 #join-us .contact .contact-card .contact-icon {
@@ -395,10 +421,11 @@ header .main-menu ul.menu-items li.display-mobile {
   }
 }
 @media (max-width: 768px) and (max-width: 530px) {
-  #discovering {
+  #discovering, #biking {
     display: none;
   }
-  li:has(a[href="#discovering"]) {
+  li:has(a[href="#discovering"]),
+  li:has(a[href="#biking"]) {
     display: none;
   }
   #extras .articles .xtra-card {

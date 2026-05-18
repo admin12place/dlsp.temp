@@ -28,6 +28,11 @@ p {
     line-height: 1.7vw;
 }
 
+ .cta-phone {
+        font-size: clamp(20px, 1.5vw, 5vw);
+        font-weight: 800;
+    }
+
 h2, h3, h4 {
     color: $title-shadow;
     text-shadow: 2px 2px 5px $title-shadow;
@@ -58,6 +63,25 @@ section {
 }
 
 a {
+    text-decoration: none;
+    color: $main-text-color;
+}
+
+.back-menu{//bouton de retour vers le haut de page
+    position: fixed;
+    width: 3%;
+    height: 3vw;
+    bottom: 20px;
+    left: 88%;
+    text-align: center;
+    gap: .5rem;
+    padding: 1rem 1rem;
+    border: 2px solid;
+    border-radius: 999px;
+    border-color: $main-text-color;
+    background: $white-cream;
+    color: $main-text-color;
+    font-size: 3vw;
     text-decoration: none;
 }
 
@@ -297,6 +321,7 @@ header {
     display: flex;
     flex-direction: column;
     margin: 6vw auto;
+    align-items: center;
     .place-map {
         display: flex;
         gap: 2vw;
@@ -325,7 +350,7 @@ header {
         flex-direction: row;
         justify-content: center;
         gap: 25px;
-        margin-top: 3vw;
+        margin: 3vw 0;
         flex-wrap: wrap;
         .contact-card {
             width: 280px;
@@ -336,6 +361,7 @@ header {
             align-items: center;
             gap: 10px;
             border: 2px solid;
+            border-color: $main-text-color;
             border-radius: 5vw;
             .contact-icon {
             height: 100px;
@@ -428,10 +454,11 @@ header {
         }
     }
     @media (max-width: 530px) {
-        #discovering {
+        #discovering, #biking {
             display: none;
         }
-        li:has(a[href="#discovering"]) {
+        li:has(a[href="#discovering"]),
+        li:has(a[href="#biking"]){
             display: none;
         }
         #extras .articles .xtra-card {

@@ -29,7 +29,7 @@ const slides = [
 	},
 	{
 		"image":"/images/slider/sete3808.webp",
-		"tagLine":"Sète, l'étang de Thau et la côte Méditerranéenne"
+		"tagLine":"Sète, la côte Méditerranéenne"
 	}
 ]
 
