@@ -7,6 +7,9 @@ $white-white: #ffffff;
 $white-cream: #e9e4cf;
 $black-black: #000000;
 $border-light: #999898;
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     //mise en forme du texte
@@ -31,6 +34,7 @@ p {
  .cta-phone {
         font-size: clamp(20px, 1.5vw, 5vw);
         font-weight: 800;
+        margin-top: 3vw;
     }
 
 h2, h3, h4 {
@@ -83,10 +87,14 @@ a {
     color: $main-text-color;
     font-size: 3vw;
     text-decoration: none;
+    transition: 0.5s;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 header {
-    padding: 20px 1vw 20px 1vw;
+    padding: 20px 1vw 40px 1vw;
     background: linear-gradient(to bottom, $main-bg-color, $white-white) ;
     .logo-title {
         display: flex;
@@ -131,23 +139,26 @@ header {
         }
     }
     .main-menu {
+        padding-top: 2vw;
         ul.menu-items {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-around;
             padding: 1vw 0;
-            margin: 0 1vw;
+            margin: 0 0vw;
             font-family: Montserrat, sans-serif;
             li {
                 list-style: none;
                 a {
                     color: $black-black;
                     font-size: clamp( 13px, 1.2vw, 18px);
+                    transition: 0.5s;
                     &:hover {
                         text-shadow: 2px 2px 5px $title-shadow;
                     }
                     .icons {
+                        transition: 0.5s;
                         &:hover {
                             opacity: 0.5;
                         }
@@ -169,7 +180,7 @@ header {
         justify-content: center;
         background-image: url("/images/20240508_vue_drone.webp");
         width: 100%;
-        height: 400px;
+        height: 500px;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -350,11 +361,11 @@ header {
         flex-direction: row;
         justify-content: center;
         gap: 25px;
-        margin: 3vw 0;
+        margin: 1vw 0 3vw 0;
         flex-wrap: wrap;
         .contact-card {
-            width: 280px;
-            height: 220px;
+            width: 200px;
+            height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -362,19 +373,34 @@ header {
             gap: 10px;
             border: 2px solid;
             border-color: $main-text-color;
-            border-radius: 5vw;
+            border-radius: 3vw;
+            transform: scale(0.8);
+            transition: 0.5s;
             .contact-icon {
             height: 100px;
             }
-        h4 {
-            font-size: 16px;
-            text-align: center;
-            margin: 0 20px
-            p {
-                font-size: clamp(12px, 1vw, 16px);
+            h4 {
+                font-size: 16px;
+                text-align: center;
+                margin: 0 20px;
+                p {
+                    font-size: clamp(12px, 1vw, 16px);
                 }
             }
+            &:hover {
+                opacity: 0.5;
+                transform: scale(0.85);
+            }
         }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .copyright {
+        text-align: center;
     }
 }
 

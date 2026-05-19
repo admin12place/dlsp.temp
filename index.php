@@ -112,6 +112,7 @@
 
             <section id="extras">
                 <h3 class="section-title">LES SERVICES</h3>
+                
                 <div class="articles">
                     <article class="xtra-card">
                         <img class="xtra-icon" src="./assets/wifi_icon.webp" alt="Wifi" title="Wifi gratuit"/>
@@ -145,6 +146,9 @@
                         <img class="xtra-icon" src="./assets/terrasse_icon.webp" alt="Terrasse partagée" title="Terrasse partagée"/>
                         <h4>Terrasse</h4>
                     </article>
+                </div>
+                <div class="main-text">
+                    <p><?php echo $xtra_text;?></p>
                 </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
@@ -213,8 +217,20 @@
         </main>
 
         <footer>
-        <span>&#xA9; des lits sur la place 2026</span><!--Le sigle cpoyright en debut de balise-->
-        <a href="#header-type" class="back-menu" title="Haut de page"><i class="fa-solid fa-arrow-up"></i></a>
+        <div class="menus-footer">
+                <article class="menu-footer">
+
+                </article>
+                <article class="menu-footer">
+                    
+                </article>
+                <article class="menu-footer">
+                    
+                </article>
+            </div>
+
+            <span class="copyright">&#xA9; des lits sur la place 2026</span><!--Le sigle cpoyright en debut de balise-->
+            <a href="#header-type" class="back-menu" title="Haut de page"><i class="fa-solid fa-arrow-up"></i></a>
         </footer>
     
     <script src="./scripts/script.js"></script>
