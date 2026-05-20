@@ -1,5 +1,22 @@
 <?php
 $tab_rooms = [
+    'mobile-rooms' => [
+        'position' => 'only-mobile',
+        'img-alt' => 'Des lits sur la place, nos chambres',
+        'img-src' => './images/WP_359.jpg',
+        'room-title' => '',
+        'room-surface' => ' De 20 à 31 m2',
+        'room-bed' => 'De 2 à 4 couchages, lits séparables',
+        'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
+        'room-clim' => 'Climatisation',
+        'room-xtras' => 'Télévision & Wifi gratuits',
+        'room-text' => 'Lingerie 100% coton.<br/>
+                        Couvertures et oreillers supplémentaires à votre disposition dans la penderie.<br/>
+                        Savon, shampoing, linge de toilette et sèche-cheveux fournis.<br/>
+                        Kitchenette partagée à votre disposition sur la terrasse.<br/>
+                         De 82 à 97 € la nuit pour 2 personnes, petit déjeuner compris.'
+    ],
+
     'celadon' => [
         'position' => 'impair-room',
         'img-alt' => 'Des lits sur la place, chambre Céladon',

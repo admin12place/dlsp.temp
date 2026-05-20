@@ -90,6 +90,7 @@
                 <h3 class="section-title">LES CHAMBRES</h3>
 
                     <?php foreach ($tab_rooms as $room):{ ?>
+                    <div class="room-contain <?= $room['position'] ?>">
                         <div class="<?= $room['position'] ?>">
                             <div class="img-room-contain">
                                 <img class="img-room" src="<?= $room['img-src'] ?>" alt="<?= $room['img-alt'] ?>" />
@@ -106,7 +107,9 @@
                                 <span class="room-text"><?= $room['room-text'] ?></span>
                             </div>
                         </div>
-                    <span class="divite"><img src="./assets/1131825.png"/></span>
+                        <span class="divite"><img src="./assets/1131825.png"/></span>
+                    </div>
+                    
                     <?php } endforeach; ?>
             </section>
 

@@ -4,7 +4,7 @@ $title-shadow: #577066;
 $main-bg-color: #ecfaf3;
 $body-bg-color: #fcfefd;
 $white-white: #ffffff;
-$white-cream: #e9e4cf;
+$white-cream: #f5eedd;
 $black-black: #000000;
 $border-light: #999898;
 html {
@@ -208,47 +208,54 @@ header {
     .section-title {
         margin-bottom: 3vw;
     }
-    .impair-room, .pair-room {
+    .room-contain {
         display: flex;
-        align-items: center;
-        margin: 3vw 0 2vw 0;
-        .text-room-contain {
-            min-width: 40%;
-            padding: 0 1vw;
-            h4 {
-                text-align: center;
-                margin: 1vw 2vw;
-                font-size:clamp(1.5rem, 1.7vw, 7rem) ;
-            }
-            ul {
-                list-style: none;
-                padding: 0;
-                li {
-                    margin: 0.4vw 0;
-                    font-size: clamp( 12px, 1.1vw, 16px);
+        flex-direction: column;
+        .impair-room, .pair-room, .only-mobile {
+            display: flex;
+            align-items: center;
+            margin: 3vw 0 2vw 0;
+            .text-room-contain {
+                min-width: 40%;
+                padding: 0 1vw;
+                h4 {
+                    text-align: center;
+                    margin: 1vw 2vw;
+                    font-size:clamp(1.5rem, 1.7vw, 7rem) ;
+                }
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    li {
+                        margin: 0.4vw 0;
+                        font-size: clamp( 14px, 1.2vw, 16px);
+                    }
+                }
+                .room-text {
+                    line-height: 1.3em;
+                    font-size: clamp( 14px, 1.2vw, 16px);
                 }
             }
-            .room-text {
-                line-height: 1.3em;
-                font-size: clamp( 12px, 1.1vw, 16px);
+            .img-room-contain {
+                max-width: 60%;
+                .img-room {
+                    max-width: 100%;
+                    height: auto;
+                    border: 0px solid;
+                    border-radius: 5vw;
+                }
             }
         }
-        .img-room-contain {
-            min-width: 60%;
-            .img-room {
-                max-width: 100%;
-                height: auto;
-                border: 0px solid;
-                border-radius: 5vw;
-            }
+        .impair-room {
+            flex-direction: row;
+        }
+        .pair-room {
+            flex-direction: row-reverse;
         }
     }
-    .impair-room {
-        flex-direction: row;
-    }
-    .pair-room {
-        flex-direction: row-reverse;
-    }
+.only-mobile {
+    display: none;
+    }    
 }
 
 #extras {
@@ -274,6 +281,7 @@ header {
             gap: 30px;
             border: 2px solid;
             border-radius: 5vw;
+            background-color: $white-cream;
             .xtra-icon {
                 height: 100px;
             }
@@ -281,7 +289,7 @@ header {
             font-size: 16px;
             text-align: center;
             margin: 0 20px
-        }
+            }
         }
     }
 }
@@ -336,7 +344,6 @@ header {
     .place-map {
         display: flex;
         gap: 2vw;
-        
         iframe {
             width: 40vw;
             height: 20vw;
@@ -360,19 +367,20 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        gap: 25px;
+        gap: 10px;
         margin: 1vw 0 3vw 0;
         flex-wrap: wrap;
         .contact-card {
-            width: 200px;
+            width: 230px;
             height: 180px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
             border: 2px solid;
             border-color: $main-text-color;
+            background-color: $white-cream;
             border-radius: 3vw;
             transform: scale(0.8);
             transition: 0.5s;
@@ -385,6 +393,7 @@ header {
                 margin: 0 20px;
                 p {
                     font-size: clamp(12px, 1vw, 16px);
+                    margin: 0;
                 }
             }
             &:hover {
@@ -407,7 +416,7 @@ footer {
 
 @media (max-width: 950px) {
     #rooms {
-        .impair-room, .pair-room {
+        .impair-room, .pair-room, .only-mobile {
         flex-direction: column;
         }
     }
@@ -465,6 +474,14 @@ footer {
             }
         }
     }
+    #rooms {
+        .impair-room, .pair-room {
+            display: none;
+        }
+        .only-mobile {
+            display: flex;
+        }
+    }
 
     main {
         #presentation {
@@ -479,6 +496,7 @@ footer {
             }
         }
     }
+
     @media (max-width: 530px) {
         #discovering, #biking {
             display: none;
@@ -487,17 +505,23 @@ footer {
         li:has(a[href="#biking"]){
             display: none;
         }
-        #extras .articles .xtra-card {
+        #extras {
+            width: 90%;
+            .articles .xtra-card {
             height: 60px;
             width: 60px;
             h4 {
                 display: none;
-            }
+                }
             img.xtra-icon {
                 height: 45px;
+                }
             }
-            
         }
+        #join-us {
+            ul.map-text {
+                padding: 0;
+            }
+        } 
     }
-
 }

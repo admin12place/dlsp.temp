@@ -71,7 +71,7 @@ a {
   border: 2px solid;
   border-radius: 999px;
   border-color: #2a3631;
-  background: #e9e4cf;
+  background: #f5eedd;
   color: #2a3631;
   font-size: 3vw;
   text-decoration: none;
@@ -196,46 +196,53 @@ header .main-menu ul.menu-items li.display-mobile {
 #rooms .section-title {
   margin-bottom: 3vw;
 }
-#rooms .impair-room, #rooms .pair-room {
+#rooms .room-contain {
+  display: flex;
+  flex-direction: column;
+}
+#rooms .room-contain .impair-room, #rooms .room-contain .pair-room, #rooms .room-contain .only-mobile {
   display: flex;
   align-items: center;
   margin: 3vw 0 2vw 0;
 }
-#rooms .impair-room .text-room-contain, #rooms .pair-room .text-room-contain {
+#rooms .room-contain .impair-room .text-room-contain, #rooms .room-contain .pair-room .text-room-contain, #rooms .room-contain .only-mobile .text-room-contain {
   min-width: 40%;
   padding: 0 1vw;
 }
-#rooms .impair-room .text-room-contain h4, #rooms .pair-room .text-room-contain h4 {
+#rooms .room-contain .impair-room .text-room-contain h4, #rooms .room-contain .pair-room .text-room-contain h4, #rooms .room-contain .only-mobile .text-room-contain h4 {
   text-align: center;
   margin: 1vw 2vw;
   font-size: clamp(1.5rem, 1.7vw, 7rem);
 }
-#rooms .impair-room .text-room-contain ul, #rooms .pair-room .text-room-contain ul {
+#rooms .room-contain .impair-room .text-room-contain ul, #rooms .room-contain .pair-room .text-room-contain ul, #rooms .room-contain .only-mobile .text-room-contain ul {
   list-style: none;
   padding: 0;
 }
-#rooms .impair-room .text-room-contain ul li, #rooms .pair-room .text-room-contain ul li {
+#rooms .room-contain .impair-room .text-room-contain ul li, #rooms .room-contain .pair-room .text-room-contain ul li, #rooms .room-contain .only-mobile .text-room-contain ul li {
   margin: 0.4vw 0;
-  font-size: clamp(12px, 1.1vw, 16px);
+  font-size: clamp(14px, 1.2vw, 16px);
 }
-#rooms .impair-room .text-room-contain .room-text, #rooms .pair-room .text-room-contain .room-text {
+#rooms .room-contain .impair-room .text-room-contain .room-text, #rooms .room-contain .pair-room .text-room-contain .room-text, #rooms .room-contain .only-mobile .text-room-contain .room-text {
   line-height: 1.3em;
-  font-size: clamp(12px, 1.1vw, 16px);
+  font-size: clamp(14px, 1.2vw, 16px);
 }
-#rooms .impair-room .img-room-contain, #rooms .pair-room .img-room-contain {
-  min-width: 60%;
+#rooms .room-contain .impair-room .img-room-contain, #rooms .room-contain .pair-room .img-room-contain, #rooms .room-contain .only-mobile .img-room-contain {
+  max-width: 60%;
 }
-#rooms .impair-room .img-room-contain .img-room, #rooms .pair-room .img-room-contain .img-room {
+#rooms .room-contain .impair-room .img-room-contain .img-room, #rooms .room-contain .pair-room .img-room-contain .img-room, #rooms .room-contain .only-mobile .img-room-contain .img-room {
   max-width: 100%;
   height: auto;
   border: 0px solid;
   border-radius: 5vw;
 }
-#rooms .impair-room {
+#rooms .room-contain .impair-room {
   flex-direction: row;
 }
-#rooms .pair-room {
+#rooms .room-contain .pair-room {
   flex-direction: row-reverse;
+}
+#rooms .only-mobile {
+  display: none;
 }
 
 #extras {
@@ -263,6 +270,7 @@ header .main-menu ul.menu-items li.display-mobile {
   gap: 30px;
   border: 2px solid;
   border-radius: 5vw;
+  background-color: #f5eedd;
 }
 #extras .articles .xtra-card .xtra-icon {
   height: 100px;
@@ -347,20 +355,21 @@ header .main-menu ul.menu-items li.display-mobile {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 25px;
+  gap: 10px;
   margin: 1vw 0 3vw 0;
   flex-wrap: wrap;
 }
 #join-us .contact .contact-card {
-  width: 200px;
+  width: 230px;
   height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
   border: 2px solid;
   border-color: #2a3631;
+  background-color: #f5eedd;
   border-radius: 3vw;
   transform: scale(0.8);
   transition: 0.5s;
@@ -375,6 +384,7 @@ header .main-menu ul.menu-items li.display-mobile {
 }
 #join-us .contact .contact-card h4 p {
   font-size: clamp(12px, 1vw, 16px);
+  margin: 0;
 }
 #join-us .contact .contact-card:hover {
   opacity: 0.5;
@@ -391,7 +401,7 @@ footer .copyright {
 }
 
 @media (max-width: 950px) {
-  #rooms .impair-room, #rooms .pair-room {
+  #rooms .impair-room, #rooms .pair-room, #rooms .only-mobile {
     flex-direction: column;
   }
   p {
@@ -443,6 +453,12 @@ footer .copyright {
   header .main-menu ul.menu-items li.display-laptop {
     display: none;
   }
+  #rooms .impair-room, #rooms .pair-room {
+    display: none;
+  }
+  #rooms .only-mobile {
+    display: flex;
+  }
   main #presentation .banner {
     height: 60vw;
   }
@@ -461,6 +477,9 @@ footer .copyright {
   li:has(a[href="#biking"]) {
     display: none;
   }
+  #extras {
+    width: 90%;
+  }
   #extras .articles .xtra-card {
     height: 60px;
     width: 60px;
@@ -470,5 +489,8 @@ footer .copyright {
   }
   #extras .articles .xtra-card img.xtra-icon {
     height: 45px;
+  }
+  #join-us ul.map-text {
+    padding: 0;
   }
 }/*# sourceMappingURL=styles.css.map */
