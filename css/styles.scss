@@ -31,11 +31,20 @@ p {
     line-height: 1.7vw;
 }
 
- .cta-phone {
-        font-size: clamp(20px, 1.5vw, 5vw);
-        font-weight: 800;
-        margin-top: 3vw;
-    }
+.cta-phone {
+    font-size: clamp(20px, 1.5vw, 5vw);
+    font-weight: 800;
+    margin-top: 3vw;
+    text-align: center;
+}
+
+.cta-nowrap {
+    white-space: nowrap;
+}
+
+.center {
+    text-align: center;
+}
 
 h2, h3, h4 {
     color: $title-shadow;
@@ -120,7 +129,7 @@ header {
             }
         }
         .details {
-            font-size: clamp( 12px, 1vw, 14px);
+            font-size: clamp( 14px, 1vw, 14px);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -133,7 +142,7 @@ header {
                 align-items: center;
                 margin-bottom: 5px;
                 .phone-number {
-                    font-size: clamp(13px, 1.2vw, 16px);
+                    font-size: clamp(15px, 1.2vw, 16px);
                 }
             }
         }
@@ -152,7 +161,7 @@ header {
                 list-style: none;
                 a {
                     color: $black-black;
-                    font-size: clamp( 13px, 1.2vw, 18px);
+                    font-size: clamp( 15px, 1.2vw, 18px);
                     transition: 0.5s;
                     &:hover {
                         text-shadow: 2px 2px 5px $title-shadow;
@@ -198,7 +207,7 @@ header {
         font-size: 2vw;
     }
     .main-text {
-        width: 90%;
+        width: 100%;
         margin: 3vw auto;
     }
 }
@@ -231,7 +240,7 @@ header {
                         font-size: clamp( 14px, 1.2vw, 16px);
                     }
                 }
-                .room-text {
+                span.room-text {
                     line-height: 1.3em;
                     font-size: clamp( 14px, 1.2vw, 16px);
                 }
@@ -297,7 +306,7 @@ header {
 #discovering {
     margin: 6vw auto;
     .main-text {
-        width: 90%;
+        width: 100%;
         margin: auto;
     }
     #slider {
@@ -452,7 +461,7 @@ footer {
             gap: 15px;
         }
         .main-menu {
-            margin-top: 2em;
+            margin-top: 1em;
             ul.menu-items {
                 display: flex;
                 flex-wrap: wrap; /*retour à la ligne */
@@ -460,7 +469,7 @@ footer {
                 li {
                     flex: 1 1 200px;
                     text-align: center;
-                    border: 0.5px solid $border-light;
+                    //border: 0.5px solid $border-light;
                     border-radius: 25px;
                     max-width: 200px;
                 }
@@ -504,6 +513,12 @@ footer {
         li:has(a[href="#discovering"]),
         li:has(a[href="#biking"]){
             display: none;
+        }
+        #rooms {
+            margin: 6vw 3vw;
+            .main-text {
+                margin: 0 3vw;
+            }
         }
         #extras {
             width: 90%;

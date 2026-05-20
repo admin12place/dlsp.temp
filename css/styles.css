@@ -23,6 +23,15 @@ p {
   font-size: clamp(20px, 1.5vw, 5vw);
   font-weight: 800;
   margin-top: 3vw;
+  text-align: center;
+}
+
+.cta-nowrap {
+  white-space: nowrap;
+}
+
+.center {
+  text-align: center;
 }
 
 h2, h3, h4 {
@@ -110,7 +119,7 @@ header .logo-title .titles h2 {
   margin: 0;
 }
 header .logo-title .details {
-  font-size: clamp(12px, 1vw, 14px);
+  font-size: clamp(14px, 1vw, 14px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,7 +134,7 @@ header .logo-title .details .phone {
   margin-bottom: 5px;
 }
 header .logo-title .details .phone .phone-number {
-  font-size: clamp(13px, 1.2vw, 16px);
+  font-size: clamp(15px, 1.2vw, 16px);
 }
 header .main-menu {
   padding-top: 2vw;
@@ -144,7 +153,7 @@ header .main-menu ul.menu-items li {
 }
 header .main-menu ul.menu-items li a {
   color: #000000;
-  font-size: clamp(13px, 1.2vw, 18px);
+  font-size: clamp(15px, 1.2vw, 18px);
   transition: 0.5s;
 }
 header .main-menu ul.menu-items li a:hover {
@@ -186,7 +195,7 @@ header .main-menu ul.menu-items li.display-mobile {
   font-size: 2vw;
 }
 #presentation .main-text {
-  width: 90%;
+  width: 100%;
   margin: 3vw auto;
 }
 
@@ -222,7 +231,7 @@ header .main-menu ul.menu-items li.display-mobile {
   margin: 0.4vw 0;
   font-size: clamp(14px, 1.2vw, 16px);
 }
-#rooms .room-contain .impair-room .text-room-contain .room-text, #rooms .room-contain .pair-room .text-room-contain .room-text, #rooms .room-contain .only-mobile .text-room-contain .room-text {
+#rooms .room-contain .impair-room .text-room-contain span.room-text, #rooms .room-contain .pair-room .text-room-contain span.room-text, #rooms .room-contain .only-mobile .text-room-contain span.room-text {
   line-height: 1.3em;
   font-size: clamp(14px, 1.2vw, 16px);
 }
@@ -285,7 +294,7 @@ header .main-menu ul.menu-items li.display-mobile {
   margin: 6vw auto;
 }
 #discovering .main-text {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 #discovering #slider {
@@ -433,7 +442,7 @@ footer .copyright {
     gap: 15px;
   }
   header .main-menu {
-    margin-top: 2em;
+    margin-top: 1em;
   }
   header .main-menu ul.menu-items {
     display: flex;
@@ -443,7 +452,6 @@ footer .copyright {
   header .main-menu ul.menu-items li {
     flex: 1 1 200px;
     text-align: center;
-    border: 0.5px solid #999898;
     border-radius: 25px;
     max-width: 200px;
   }
@@ -476,6 +484,12 @@ footer .copyright {
   li:has(a[href="#discovering"]),
   li:has(a[href="#biking"]) {
     display: none;
+  }
+  #rooms {
+    margin: 6vw 3vw;
+  }
+  #rooms .main-text {
+    margin: 0 3vw;
   }
   #extras {
     width: 90%;

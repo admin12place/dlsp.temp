@@ -10,11 +10,7 @@ $tab_rooms = [
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
         'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => 'Lingerie 100% coton.<br/>
-                        Couvertures et oreillers supplémentaires à votre disposition dans la penderie.<br/>
-                        Savon, shampoing, linge de toilette et sèche-cheveux fournis.<br/>
-                        Kitchenette partagée à votre disposition sur la terrasse.<br/>
-                         De 82 à 97 € la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-text' => 'De 82 à 97 € la nuit pour 2 personnes, petit déjeuner compris.'
     ],
 
     'celadon' => [
@@ -27,11 +23,7 @@ $tab_rooms = [
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation naturelle',
         'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => 'Lingerie 100% coton.<br/>
-                        Couvertures et oreillers supplémentaires à votre disposition dans la penderie.<br/>
-                        Savon, shampoing, linge de toilette et sèche-cheveux fournis.<br/>
-                        Kitchenette partagée à votre disposition sur la terrasse.<br/>
-                        82€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-text' => '82€ la nuit pour 2 personnes, petit déjeuner compris.'
     ],
 
 'sienne-alizarine' => [
@@ -44,12 +36,7 @@ $tab_rooms = [
     'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
     'room-clim' => 'Climatisation',
     'room-xtras' => 'Télévision & Wifi gratuits',
-    'room-text' => 'Lingerie 100% coton.<br/>
-                    Couvertures et oreillers supplémentaires à votre disposition dans la penderie.<br/>
-                    Savon, shampoing, linge de toilette et sèche-cheveux fournis.<br/>
-                    Lit parapluie disponible sur demande pour un enfant de moins de 2 ans.<br/>
-                    Kitchenette partagée à votre disposition sur la terrasse.<br/>
-                    89€ la nuit pour 2 personnes, petit déjeuner compris.'
+    'room-text' => '89€ la nuit pour 2 personnes, petit déjeuner compris.'
 ],
 
     'ombre' => [
@@ -62,12 +49,7 @@ $tab_rooms = [
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
         'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => 'Lingerie 100% coton.<br/>
-                        Couvertures et oreillers supplémentaires à votre disposition dans la penderie.<br/>
-                        Savon, shampoing, linge de toilette et sèche-cheveux fournis.<br/>
-                        Lit parapluie disponible sur demande pour un enfant de moins de 2 ans.<br/>
-                        Kitchenette partagée à votre disposition sur la terrasse.<br/>
-                        97€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-text' => '97€ la nuit pour 2 personnes, petit déjeuner compris.'
     ],
 
     'pouzolle' => [
@@ -80,14 +62,13 @@ $tab_rooms = [
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
         'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => 'Lingerie 100% coton.<br/>
-                        Couvertures et oreillers supplémentaires à votre disposition dans la penderie.<br/>
-                        Savon, shampoing, linge de toilette et sèche-cheveux fournis.<br/>
-                        Lit parapluie disponible sur demande pour un enfant de moins de 2 ans.<br/>
-                        Kitchenette partagée à votre disposition sur la terrasse.<br/>
-                        97€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-text' => '97€ la nuit pour 2 personnes, petit déjeuner compris.'
     ],
 ];
+
+$rooms_text = 'Linge 100% coton. Savon, shampoing, linge de toilette et sèche-cheveux fournis.
+Lit parapluie disponible sur demande pour un enfant de moins de 2 ans.
+Kitchenette partagée à votre disposition sur la terrasse.';
 
 $main_text = 'Vous avez un week-end de libre?<br/>
 <p>Envisager de flâner dans les ruelles des villages de la Haute Vallée de l\'Orb, admirer le Canigou depuis la Coquillade, 

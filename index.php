@@ -88,6 +88,9 @@
 
             <section id="rooms">
                 <h3 class="section-title">LES CHAMBRES</h3>
+                <div class="main-text">
+                    <p class=""><?php echo $rooms_text;?></p>
+                </div>
 
                     <?php foreach ($tab_rooms as $room):{ ?>
                     <div class="room-contain <?= $room['position'] ?>">
@@ -180,7 +183,7 @@
 
             <section id="join-us">
                 <h3 class="section-title">NOUS JOINDRE, NOUS TROUVER</h3>
-                <div class="main-text"><p class="cta-phone">APPELEZ-NOUS AU 06 41 61 43 44</p></div>
+                <div class="main-text"><p class="cta-phone">APPELEZ-NOUS AU <span class="cta-nowrap">06 41 61 43 44</span></p></div>
                 
                 <div class="contact">
                     <a href="tel:+33641614344"><article class="contact-card">
@@ -196,7 +199,7 @@
                     <article class="contact-card">
                         <img class="contact-icon" src="./assets/letter.svg" alt="Adresse" title="Adresse postale"/>
                         <h4>Des lits sur la place
-                        <p class="adresse">12place de la croix<br/>34600 HÉRÉPIAN</p></h4>
+                        <p class="adresse">12 place de la croix<br/>34600 HÉRÉPIAN</p></h4>
                     </article>
                 </div>
                 
@@ -221,10 +224,10 @@
 
         <footer>
         <div class="menus-footer">
-                <article class="menu-footer">
+                <article class="menu-footer logo-partenaires">
 
                 </article>
-                <article class="menu-footer">
+                <article class="menu-footer policy-menu">
                     
                 </article>
                 <article class="menu-footer">
