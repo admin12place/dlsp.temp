@@ -87,13 +87,8 @@ $xtra_text = 'Virginie & Vincent Cros ont repris le restaurant l\'Ocre Rouge dep
 une cuisine créative et gourmande associant produits du Languedoc et saveurs du monde.<br/>
 Menus de 25 à 39€. Réservation au 04 67 95 06 93.'; 
 
-$region_text = 'Lorem ipsum dolor sit amet. Eos consectetur quia et nemo commodi qui repudiandae ipsam aut distinctio 
-provident. 33 sapiente velit sit vitae enim eum repudiandae quasi non explicabo provident et consequatur consequatur 
-in itaque enim ea illum labore. Ut dolores amet 33 omnis veritatis et minima quia et tenetur rerum sit accusamus 
-dolorum? Eum natus similique sed illo doloribus sed eius eaque sit repellat temporibus id impedit quae. Aut voluptate 
-ipsa qui velit nobis qui amet neque aut vitae fugit vel inventore quasi ut laboriosam eveniet eum perspiciatis natus. 
-Eos omnis corrupti qui nihil voluptas id quas labore. Sit adipisci iusto et eaque pariatur qui nihil voluptas eos 
-asperiores error aut mollitia cumque. Est aperiam quos et excepturi velit et eligendi internos qui quam illum et 
-nesciunt repellendus in explicabo magnam. Qui fugiat corporis in perspiciatis amet sed impedit voluptatum ab 
-voluptas commodi. ';
+$region_text = 'Idéalement situé entre Toulouse et Montpellier, Hérépian et ses alentours regorgent de mille trésors à découvrir selon vos envies.<br/>
+Randonnées pedestres et equestres, pistes VTT, canyoning, via ferrata, parcours d\'acrobranches, équitation, canoe-kayak, oenotourisme, marchés locaux, 
+thermalisme, spéléologie, lac du Salagou, montagne du Caroux, musée et patrimoine architectural sans oublier le Parc Naturel régional du Haut-Languedoc ou les plages du littoral...
+';
 ?>

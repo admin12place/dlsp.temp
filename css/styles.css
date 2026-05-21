@@ -40,6 +40,15 @@ h2, h3, h4 {
   margin: 0;
 }
 
+h4 {
+  text-shadow: none;
+}
+
+.text-subtitle {
+  font-size: clamp(1.5rem, 2vw, 7rem);
+  text-shadow: 2px 2px 5px #577066;
+}
+
 span.divite img {
   display: block;
   width: clamp(100px, 10vw, 500px);
@@ -255,7 +264,6 @@ header .main-menu ul.menu-items li.display-mobile {
 }
 
 #extras {
-  width: 60%;
   margin: 6vw auto;
 }
 #extras h3 {
@@ -326,6 +334,19 @@ header .main-menu ul.menu-items li.display-mobile {
   cursor: pointer;
 }
 #discovering #slider .slider-image {
+  width: 80%;
+  border-radius: 5vw;
+  background-color: #000000;
+}
+
+#biking #slider {
+  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-40%);
+  transition: opacity 0.7s ease;
+}
+#biking #slider .slider-image {
   width: 80%;
   border-radius: 5vw;
   background-color: #000000;

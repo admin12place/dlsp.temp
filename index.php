@@ -154,6 +154,7 @@
                     </article>
                 </div>
                 <div class="main-text">
+                    <h4 class="center text-subtitle">Et pour un séjour complet...</h4>
                     <p><?php echo $xtra_text;?></p>
                 </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
@@ -177,7 +178,14 @@
 
             <section id="biking">
                 <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
-                <div class="main-text"><p></p></div>
+
+                <div id="slider">
+                    <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Découvrir le Parc"/>
+                </div>
+
+                <div class="main-text">
+                    <p></p>
+                </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
 
