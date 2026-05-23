@@ -1,3 +1,5 @@
+/*********************SLIDER IMAGES DU #DISCOVERING**********************/
+
 const slides = [
     {
 		"image":"/images/slider/fleurs3028.webp",
@@ -97,3 +99,73 @@ function updateSlide(i) {
 
     }, 300);
 }
+
+function nextSlide() {
+    index++;
+    if(index >= nbSlides) {
+        index = 0;
+    }
+    updateSlide(index);
+}
+
+
+function prevSlide() {
+    if(index <= 0) {
+        index = nbSlides;
+    }
+    index--;
+    updateSlide(index);
+}
+
+//**********AUTO SLIDER***********/
+
+let autoSlide = setInterval(nextSlide, 3000);
+
+
+// Reset timer après action utilisateur
+function resetAutoSlide() {
+
+    clearInterval(autoSlide);
+
+    autoSlide = setInterval(nextSlide, 3000);
+}
+
+//*********PAUSE AU HOVER*********/
+
+slider.addEventListener("mouseenter", () => {
+    clearInterval(autoSlide);
+});
+
+slider.addEventListener("mouseleave", () => {
+    autoSlide = setInterval(nextSlide, 3000);
+});
+
+/****************SLIDER DU #EXTRAS****************/
+
+const articles = document.querySelector(".articles");
+const cards = document.querySelectorAll(".xtra-card");
+
+let indexcards = 0;
+
+const visibleCards = 6;
+
+const totalCards = 8;
+
+function slideCards() {
+
+	indexcards++;
+
+	// retour au début
+	if(indexcards > totalCards - visibleCards) {
+		indexcards = 0;
+	}
+
+	// largeur d'une card + gap
+	const cardWidth = cards[0].offsetWidth + 20;
+
+	articles.style.transform = `translateX(-${indexcards * cardWidth}px)`;
+}
+
+
+// auto slide
+setInterval(slideCards, 1000);

@@ -49,27 +49,27 @@
                     <h1>Chambres d'hôtes en Occitanie</h1>
                 </div>
                 <article class="details">
-                <div class="phone header-phone">
+                    <div class="phone header-phone">
                         <img class="icons" src="./assets/call_icon.png" alt="Téléphone"/>
                         <a href="tel:+33641614344"><span class="phone-number">06 41 61 43 44</span></a>
                     </div>
                     <div class="adresse">
                         <span>12 place de la croix<br/>34600 HÉRÉPIAN</span>
                     </div>
+                    <div class="header-mail">
+                        <a href="#open-contact" title="Nous écrire"><img class="icons" src="./assets/letter.svg" alt="Envoyer un mail" title="Nous écrire"/></a>
+                    </div>
                 </articles>
             </div>
 
             <nav class="main-menu">
                 <ul class="menu-items">
-                    <li class="display-laptop"><a href="#home"><img class="icons" src="./assets/home_icon.png" alt="Page d'accueil" title="Page d'accueil"/></a></li>
-                    <li class="display-mobile"><a href="#home">Accueil</a></li>
                     <li><a href="#rooms" title="Découvrez nos chambres">Les chambres</a></li>
                     <li><a href="#extras" title="Dans votre chambre">Les services</a></li>
                     <li><a href="#biking" title="Bienvenue aux &#10; cyclistes">L'accueil vélo</a></li>
                     <li><a href="#discovering" title="A découvrir">La région</a></li>
-                    <li><a href="#join-us" title="Réserver, nous écrire">Réservation Contact</a></li>
-                    <li class="display-laptop"><a href="#join-us"><img class="icons" src="./assets/map_icon.png" alt="Nous trouver" title="Nous trouver"/></a></li>
-                    <li class="display-mobile"><a href="#join-us">Nous trouver</a></li>
+                    <li><a href="#join-us" title="Réserver, nous écrire">Réserver</a></li>
+                    <li><a href="#join-us" title="Google Maps">Nous trouver</a></li>
                 </ul>
             </nav>
         </header>
@@ -81,16 +81,14 @@
                     <h3 class="section-undertitle">au coeur du parc du Haut-Languedoc</h3>
                 </div>
                 <div class="main-text">
-                    <p><?php echo $main_text;?></p>
+                    <p><?php echo $main_text1;?></p><p><?php echo $main_text2;?></p>
                 </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
 
             <section id="rooms">
                 <h3 class="section-title">LES CHAMBRES</h3>
-                <div class="main-text">
-                    <p class=""><?php echo $rooms_text;?></p>
-                </div>
+                <div class="main-text"><p class=""><?php echo $rooms_text;?></p></div><!--si besoin-->
 
                     <?php foreach ($tab_rooms as $room):{ ?>
                     <div class="room-contain <?= $room['position'] ?>">
@@ -118,41 +116,23 @@
 
             <section id="extras">
                 <h3 class="section-title">LES SERVICES</h3>
+                    <div class="main-text"><p class=""><?php echo $extras_text;?></p></div><!--si besoin-->
                 
-                <div class="articles">
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/wifi_icon.webp" alt="Wifi" title="Wifi gratuit"/>
-                        <h4>Wifi</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/tv_icon.webp" alt="Télévision" title="Télévision dans toutes les chambres"/>
-                        <h4>télévision</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/clim_icon.webp" alt="Climatisation" title="Chambres climatisées"/>
-                        <h4>Climatisation</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/pdj_icon.webp" alt="Petit déjeuner" title="Petit déjeuner continental fait maison"/>
-                        <h4>Petit déjeuner compris</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/parking_icon.png" alt="Parking gratuit" title="Parking gratuit à 150 mètres"/>
-                        <h4>Parking</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/resto_icon.png" alt="Restaurant" title="Restaurant l'Ocre Rouge"/>
-                        <h4>Restaurant sur place</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/kitch_icon.webp" alt="Kitchenette à disposition" title="Kitchenette à disposition"/>
-                        <h4>Kitchenette</h4>
-                    </article>
-                    <article class="xtra-card">
-                        <img class="xtra-icon" src="./assets/terrasse_icon.webp" alt="Terrasse partagée" title="Terrasse partagée"/>
-                        <h4>Terrasse</h4>
-                    </article>
+                <div class="articles-wrapper">
+                    <div class="articles">
+
+                        <?php $index_xtras = 0;
+                        while ($index_xtras < 2) {//on boucle 2 fois
+                        foreach ($tab_xtras as $xtra):{ ?>
+                            <article class="xtra-card">
+                                <img class="xtra-icon" src="<?= $xtra['xtras_src']; ?>" alt="<?= $xtra['xtras_alt']; ?>" title="<?= $xtra['xtras_title']; ?>" />
+                                <h4><?= $xtra['xtras_h4']; ?></h4>
+                            </article>
+                        <?php } endforeach; $index_xtras++; };?>
+
+                    </div>
                 </div>
+
                 <div class="main-text">
                     <h4 class="center text-subtitle">Et pour un séjour complet...</h4>
                     <p><?php echo $xtra_text;?></p>
@@ -177,8 +157,10 @@
             </section>
 
             <section id="biking">
-                <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
-
+                <!--<div class="reach-title">-->
+                    <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
+                <!--</div>-->
+                <p class="main-text"><?php echo $biking_text;?></p>
                 <div id="slider">
                     <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Découvrir le Parc"/>
                 </div>

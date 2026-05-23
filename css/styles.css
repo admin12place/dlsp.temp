@@ -1,4 +1,12 @@
 @charset "UTF-8";
+@keyframes scrollSlider {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
 html {
   scroll-behavior: smooth;
 }
@@ -8,8 +16,8 @@ body {
   font-weight: 400;
   font-style: normal;
   background-color: #fcfefd;
-  width: 80%;
-  max-width: 1350px;
+  width: 95%;
+  max-width: 1700px;
   margin: auto;
 }
 
@@ -17,6 +25,23 @@ p {
   font-size: clamp(14px, 1.3vw, 18px);
   color: #2a3631;
   line-height: 1.7vw;
+}
+
+p .like_paragraf {
+  display: block;
+  margin: 1em 0;
+}
+
+.text-link {
+  background-color: #226b4e;
+  color: #f5eedd;
+  padding: 4px 3px 0px 3px;
+  border: 1px solid #999898;
+  border-radius: 1vw;
+}
+.text-link:hover {
+  background-color: #f5eedd;
+  color: #226b4e;
 }
 
 .cta-phone {
@@ -44,9 +69,23 @@ h4 {
   text-shadow: none;
 }
 
+h5 {
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+}
+
+.main-text {
+  width: 95%;
+  margin: 3vw auto;
+}
+
+.text-link:hover {
+  text-shadow: 2px 2px 5px #577066;
+}
+
 .text-subtitle {
   font-size: clamp(1.5rem, 2vw, 7rem);
   text-shadow: 2px 2px 5px #577066;
+  transform: scale(0.85);
 }
 
 span.divite img {
@@ -132,6 +171,7 @@ header .logo-title .details {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 header .logo-title .details .adresse {
   text-align: center;
@@ -139,11 +179,15 @@ header .logo-title .details .adresse {
 header .logo-title .details .phone {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 5px;
 }
 header .logo-title .details .phone .phone-number {
-  font-size: clamp(15px, 1.2vw, 16px);
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 700;
+}
+header .logo-title .details .header-mail .icons {
+  width: clamp(35px, 3vw, 50px);
 }
 header .main-menu {
   padding-top: 2vw;
@@ -174,10 +218,10 @@ header .main-menu ul.menu-items li a .icons {
 header .main-menu ul.menu-items li a .icons:hover {
   opacity: 0.5;
 }
-header .main-menu ul.menu-items li.display-mobile {
-  display: none;
-}
 
+#presentation {
+  margin-top: 0;
+}
 #presentation .banner {
   display: flex;
   flex-direction: column;
@@ -190,9 +234,6 @@ header .main-menu ul.menu-items li.display-mobile {
   background-repeat: no-repeat;
   box-shadow: inset 0px 0px 30px 30px rgb(255, 255, 255);
 }
-#presentation {
-  margin-top: 3rem;
-}
 #presentation h2, #presentation h3 {
   text-shadow: none;
   color: #ffffff;
@@ -202,10 +243,6 @@ header .main-menu ul.menu-items li.display-mobile {
 }
 #presentation h3 {
   font-size: 2vw;
-}
-#presentation .main-text {
-  width: 100%;
-  margin: 3vw auto;
 }
 
 #rooms {
@@ -269,31 +306,38 @@ header .main-menu ul.menu-items li.display-mobile {
 #extras h3 {
   margin: 5vw 0 3vw 0;
 }
-#extras .articles {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2vw;
-  margin-bottom: 3vw;
+#extras .articles-wrapper {
+  overflow: hidden;
+  width: 95%;
+  margin: auto;
 }
-#extras .articles .xtra-card {
+#extras .articles-wrapper .articles {
+  display: flex;
+  gap: 4vw;
+  margin-bottom: 3vw;
+  transition: transform 0.5s ease;
+  width: -moz-max-content;
+  width: max-content;
+  animation: scrollSlider 20s linear infinite;
+}
+#extras .articles-wrapper .articles .xtra-card {
   width: 150px;
+  min-width: 150px;
   height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: calc(100% - 900px)/5;
   border: 2px solid;
   border-radius: 5vw;
   background-color: #f5eedd;
+  flex-shrink: 0;
 }
-#extras .articles .xtra-card .xtra-icon {
+#extras .articles-wrapper .articles .xtra-card .xtra-icon {
   height: 100px;
 }
-#extras .articles .xtra-card h4 {
-  font-size: 16px;
+#extras .articles-wrapper .articles .xtra-card h4 {
   text-align: center;
   margin: 0 20px;
 }
@@ -301,25 +345,25 @@ header .main-menu ul.menu-items li.display-mobile {
 #discovering {
   margin: 6vw auto;
 }
-#discovering .main-text {
-  width: 100%;
-  margin: auto;
-}
 #discovering #slider {
-  width: 100%;
   position: relative;
-  left: 50%;
-  transform: translateX(-40%);
+  width: 80%;
+  margin: 0 auto;
   transition: opacity 0.7s ease;
+}
+#discovering #slider .slider-image {
+  display: block;
+  width: 100%;
+  max-width: 80vw;
+  border-radius: 5vw;
 }
 #discovering #slider .arrows {
   position: absolute;
-  width: 80%;
+  inset: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  bottom: 50%;
-  transform: translateY(40%);
 }
 #discovering #slider .arrows #tag-line {
   font-size: clamp(12px, 2vw, 50px);
@@ -333,12 +377,23 @@ header .main-menu ul.menu-items li.display-mobile {
 #discovering #slider .arrows img.arrow:hover {
   cursor: pointer;
 }
-#discovering #slider .slider-image {
-  width: 80%;
-  border-radius: 5vw;
-  background-color: #000000;
-}
 
+#biking h3.section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+}
+#biking h3.section-title::before {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 42px;
+  background-image: url("../assets/accueil_velo_icon.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 #biking #slider {
   width: 100%;
   position: relative;
@@ -384,8 +439,7 @@ header .main-menu ul.menu-items li.display-mobile {
   width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-around;
   margin: 1vw 0 3vw 0;
   flex-wrap: wrap;
 }
@@ -497,8 +551,25 @@ footer .copyright {
   main #presentation .banner .section-undertitle {
     font-size: clamp(14px, 3vw, 36px);
   }
+  main #extras .articles-wrapper .articles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
-@media (max-width: 768px) and (max-width: 530px) {
+@media (max-width: 530px) {
+  header .logo-title .details .phone {
+    align-items: flex-start;
+  }
+  header .logo-title .details .phone .phone-number {
+    font-size: 30px;
+  }
+  #presentation {
+    margin: 0 8px;
+  }
+  #presentation .main-text p:first-child {
+    display: none;
+  }
   #discovering, #biking {
     display: none;
   }
@@ -512,17 +583,20 @@ footer .copyright {
   #rooms .main-text {
     margin: 0 3vw;
   }
-  #extras {
+  #articles-wrapper #extras {
     width: 90%;
   }
-  #extras .articles .xtra-card {
+  #articles-wrapper #extras .articles {
+    margin: auto;
+  }
+  #articles-wrapper #extras .articles .xtra-card {
     height: 60px;
     width: 60px;
   }
-  #extras .articles .xtra-card h4 {
+  #articles-wrapper #extras .articles .xtra-card h4 {
     display: none;
   }
-  #extras .articles .xtra-card img.xtra-icon {
+  #articles-wrapper #extras .articles .xtra-card img.xtra-icon {
     height: 45px;
   }
   #join-us ul.map-text {
