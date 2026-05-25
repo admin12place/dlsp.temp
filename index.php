@@ -1,14 +1,40 @@
+<?php require_once './scripts/functions.php';?><!--INCLUSION DU FICHIER DE FONCTIONS PHP-->
+
+<?php
+session_start();
+$send_message = "ENVOYEZ VOTRE MESSAGE";
+$modal_open = false;
+
+if(isset($_POST['nom'])) {
+    $nom = htmlspecialchars($_POST['nom']);
+    $prenom = htmlspecialchars($_POST['prenom']);
+    $mail = htmlspecialchars($_POST['mail']);
+    $phone = htmlspecialchars($_POST['phone']);
+    $message = htmlspecialchars($_POST['message']);
+
+    sendMailContact($nom, $prenom, $mail, $phone, $message);
+
+    $_SESSION['message_sent'] = true;
+
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+if(isset($_SESSION['message_sent'])) {
+    $send_message = "MESSAGE ENVOYÉ";
+    $modal_open = true;
+    unset($_SESSION['message_sent']);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
-
-    <?php require_once './scripts/functions.php';?><!--INCLUSION DU FICHIER DE FONCTIONS PHP-->
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Des lits sur la place - Chambres d'hôtes dans l'Herault</title>
-        <link rel="stylesheet" href="./css/constantes.css">
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/parts.css">
         <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +66,7 @@
 
     </head>
 
-    <body id="home">
+    <body id="home" data-modal-open="<?php echo $modal_open ? 'true' : 'false'; ?>">
         <header id="header-type" class="container-logo-menu">
             <div class="logo-title">
                 <a href="#"><img class="logo" src="./images/logo-dlsp-alpha.webp" alt="Logo Des lits sur la place"/></a>
@@ -66,10 +92,10 @@
                 <ul class="menu-items">
                     <li><a href="#rooms" title="Découvrez nos chambres">Les chambres</a></li>
                     <li><a href="#extras" title="Dans votre chambre">Les services</a></li>
+                    <li><a href="#join-us" title="Google Maps">Nous trouver</a></li>
+                    <li><a href="#join-us" title="Réserver, nous écrire">Réserver</a></li>
                     <li><a href="#biking" title="Bienvenue aux &#10; cyclistes">L'accueil vélo</a></li>
                     <li><a href="#discovering" title="A découvrir">La région</a></li>
-                    <li><a href="#join-us" title="Réserver, nous écrire">Réserver</a></li>
-                    <li><a href="#join-us" title="Google Maps">Nous trouver</a></li>
                 </ul>
             </nav>
         </header>
@@ -181,7 +207,7 @@
                         <h4>Appelez-nous</h4>
                     </article></a>
 
-                    <a href="mailto:contact@deslitssurlaplace.fr"><article class="contact-card">
+                    <a href="#join-us" id="open-contact-modal"><article class="contact-card">
                         <img class="contact-icon" src="./assets/arobase.svg" alt="Climatisation" title="Adresse mail"/>
                         <h4>Écrivez-nous</h4>
                     </article></a>
@@ -208,7 +234,8 @@
                     </ul>
                 </div>
                 
-                <div class="contact-form"></div>
+                <div class="contact-form"><?php include './templates/modalContact.php'; ?></div>
+                
             </section>
         </main>
 
@@ -230,5 +257,6 @@
         </footer>
     
     <script src="./scripts/script.js"></script>
+
     </body>
 </html>

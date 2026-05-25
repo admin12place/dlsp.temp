@@ -134,8 +134,7 @@ profiter des derniers rayons du soleil au bord de l\'Orb.</span>
 $main_text2 = '<span class="like_paragraf">Nous vous proposons toute l\'année cinq jolies chambres dans notre maison de village du 19eme siècle, chacune de 
 caractère mais offrant toutes un confort d\'aujourd\'hui. Vous pourrez profiter de la terrasse pour des petits 
 déjeuners au soleil, ou dans la salle commune les autres jours.</span>
-<span class="like_paragraf">Nos chambres peuvent accueillir de deux à quatre personnes et nous mettons à votre disposition des lits pour les 
-enfants de moins de deux ans.</span>
+<span class="like_paragraf">Nos chambres peuvent accueillir de deux à quatre personnes.</span>
 <span class="like_paragraf"><h5>À partir de 82€ la nuit pour 2 personnes, petit déjeuner compris.</h5></span>';
 
 $rooms_text = 'Linge 100% coton - Savon, shampoing, linge de toilette et sèche-cheveux fournis - 
@@ -154,5 +153,26 @@ ou les plages du littoral...';
 
 $biking_text = 'La labellisation <a class="text-link" href="https://www.francevelotourisme.com/accueil-velo" target="_blank" title="France-Vélo-Tourisme">
                 <b>Accueil Vélo</b></a> vous garantie de trouver à votre arrivée les meilleures conditions de séjour pour vous et vos montures.
-                Garage sécurisé, matériel de réparation, recharge des VAE, conseil d\'itinéraire...<br/> L\'essentiel pour une pause en toute serenité!'
+                Garage sécurisé, matériel de réparation, recharge des VAE, conseil d\'itinéraire...<br/> L\'essentiel pour une pause en toute serenité!';
+
+$mail_dest = "lesgensdelaplace@orange.fr";
+                //FONCTIONS SPÉCIFIQUES
+
+function sendMailContact($arg_nom, $arg_prenom, $arg_mail, $arg_phone, $arg_message){
+
+    $to = $mail_dest;
+    $subject = "Nouveau message de " . $arg_nom . " " . $arg_prenom;
+    $message_body = "
+    Nom : $arg_nom<br/>
+    Prénom : $arg_prenom<br/>
+    Email : $arg_mail<br/>
+    Téléphone : $arg_phone<br/>
+    Message :<br/>$arg_message";
+
+    $headers = "From : $arg_mail\r\n";
+    $headers .= "reply-to: $arg_mail\r\n";
+
+    mail($to, $subject, $body, $headers);
+}
+
 ?>

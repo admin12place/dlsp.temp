@@ -165,7 +165,33 @@ function slideCards() {
 
 	articles.style.transform = `translateX(-${indexcards * cardWidth}px)`;
 }
-
-
 // auto slide
 setInterval(slideCards, 1000);
+
+/*****************MODALE DE CONTACT*****************/
+
+const modal = document.getElementById('modal-contact');
+const openBtn = document.getElementById('open-contact-modal');
+const closeBtn = document.getElementById('close-contact-modal');
+const submitForm = document.getElementById('modal-contact-form');
+const submitBtn = document.getElementById('submit-modal-contact');
+
+const modalOpen = document.body.dataset.modalOpen;
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+		submitForm.addEventListener('submit', () => {
+			submitBtn.disabled = true;
+		});
+			
+		if(modalOpen === 'true') {
+			modal.classList.add('active');
+			submitBtn.disabled = true;	
+		};
+
