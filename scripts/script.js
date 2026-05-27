@@ -176,6 +176,7 @@ const closeBtn = document.getElementById('close-contact-modal');
 const submitForm = document.getElementById('modal-contact-form');
 const submitBtn = document.getElementById('submit-modal-contact');
 
+
 const modalOpen = document.body.dataset.modalOpen;
 
         openBtn.addEventListener('click', () => {
@@ -183,7 +184,9 @@ const modalOpen = document.body.dataset.modalOpen;
         });
 
         closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
+			submitBtn.disabled = false;
+			submitBtn.value = 'ENVOYEZ VOTRE MESSAGE';
+			modal.classList.remove('active');
         });
 
 		submitForm.addEventListener('submit', () => {

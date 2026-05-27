@@ -500,11 +500,54 @@ header {
 }
 
 footer {
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2vw 0;
+    border-top: 2px solid $main-text-color;
+    color: $black-black;
     .copyright {
+        padding: 2vw;
         text-align: center;
+    }
+    .menus-footer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        gap: 2vw;
+        .site-description,
+        .logo-partenaires,
+        .policy-menu,
+        .main-menu-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: clamp(150px, 33.33%, 350px);
+            max-height: 280px;
+            padding: 1vw;
+            border: 1px solid $green-green;
+            border-radius: 1vw;
+            background-color: $white-cream;
+            .logo-left {
+                float: left;
+                margin-right: 10px;
+                margin-bottom: 0px;
+                width: 100px;
+            }
+        }
+    }
+    h3 {
+        font-size: 1.2vw;
+        text-shadow: none;
+        text-align: center;
+    }
+    p {
+        margin: 0;
+        font-size: 0.7vw;
+        line-height: 1vw;
     }
 }
 
@@ -595,6 +638,7 @@ footer {
                     display: flex;  
                     flex-wrap: wrap;
                     justify-content: center;
+                    animation: scrollSlider 10s linear infinite;
                 }
             }
         }

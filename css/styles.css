@@ -476,12 +476,58 @@ header .main-menu ul.menu-items li a .icons:hover {
 }
 
 footer {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 2vw 0;
+  border-top: 2px solid #2a3631;
+  color: #000000;
+}
+footer .copyright {
+  padding: 2vw;
+  text-align: center;
+}
+footer .menus-footer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  gap: 2vw;
+}
+footer .menus-footer .site-description,
+footer .menus-footer .logo-partenaires,
+footer .menus-footer .policy-menu,
+footer .menus-footer .main-menu-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: clamp(150px, 33.33%, 350px);
+  max-height: 280px;
+  padding: 1vw;
+  border: 1px solid #226b4e;
+  border-radius: 1vw;
+  background-color: #f5eedd;
 }
-footer .copyright {
+footer .menus-footer .site-description .logo-left,
+footer .menus-footer .logo-partenaires .logo-left,
+footer .menus-footer .policy-menu .logo-left,
+footer .menus-footer .main-menu-footer .logo-left {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  width: 100px;
+}
+footer h3 {
+  font-size: 1.2vw;
+  text-shadow: none;
   text-align: center;
+}
+footer p {
+  margin: 0;
+  font-size: 0.7vw;
+  line-height: 1vw;
 }
 
 @media (max-width: 950px) {
@@ -555,6 +601,7 @@ footer .copyright {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    animation: scrollSlider 10s linear infinite;
   }
 }
 @media (max-width: 530px) {

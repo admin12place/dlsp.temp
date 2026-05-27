@@ -19,6 +19,11 @@ session_start();
 $send_message = "ENVOYEZ VOTRE MESSAGE";
 $modal_open = false;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'vendor/autoload.php';
+
+
 if(isset($_POST['nom'])) {
     $nom = htmlspecialchars($_POST['nom']);
     $prenom = htmlspecialchars($_POST['prenom']);
@@ -26,7 +31,38 @@ if(isset($_POST['nom'])) {
     $phone = htmlspecialchars($_POST['phone']);
     $message = htmlspecialchars($_POST['message']);
 
-    sendMailContact($nom, $prenom, $mail, $phone, $message);
+    //envoi du message via phpmailer
+    $bodyMail = "NOM : $nom $prenom<br>
+                MAIL : $mail<br>
+                TELEPHONE : $phone<br>
+                MESSAGE : $message";
+
+    $mail = new PHPMailer(true);
+
+        try {
+
+            $mail->isSMTP();
+            $mail->Host = 'smtp.texio.net';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'smtp@deslitssurlaplace.fr';
+            $mail->Password = 'hktdwfrt';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port = 587;
+            
+            $mail->isHTML(true);
+            $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
+            $mail->addReplyTo = $mail;
+            $mail->addAddress('lesgensdelaplace@orange.fr');
+            $mail->Subject = 'Nouveau message de test';
+            $mail->Body = $bodyMail;
+            $mail->send();
+            echo 'Mail envoyé';
+        }
+
+        catch (Exception $e) {
+            echo $mail->ErrorInfo;
+        }
+    //fin de routine
 
     $_SESSION['message_sent'] = true;
 
@@ -82,36 +118,7 @@ if(isset($_SESSION['message_sent'])) {
 
     <body id="home" data-modal-open="<?php echo $modal_open ? 'true' : 'false'; ?>">
         <header id="header-type" class="container-logo-menu">
-            <div class="logo-title">
-                <a href="#"><img class="logo" src="./images/logo-dlsp-alpha.webp" alt="Logo Des lits sur la place"/></a>
-                <div class="titles">
-                    <!--<h2>DES LITS SUR LA PLACE</h2>-->
-                    <h1>Chambres d'hôtes en Occitanie</h1>
-                </div>
-                <article class="details">
-                    <div class="phone header-phone">
-                        <img class="icons" src="./assets/call_icon.png" alt="Téléphone"/>
-                        <a href="tel:+33641614344"><span class="phone-number">06 41 61 43 44</span></a>
-                    </div>
-                    <div class="adresse">
-                        <span>12 place de la croix<br/>34600 HÉRÉPIAN</span>
-                    </div>
-                    <div class="header-mail">
-                        <a href="#open-contact" title="Nous écrire"><img class="icons" src="./assets/letter.svg" alt="Envoyer un mail" title="Nous écrire"/></a>
-                    </div>
-                </articles>
-            </div>
-
-            <nav class="main-menu">
-                <ul class="menu-items">
-                    <li><a href="#rooms" title="Découvrez nos chambres">Les chambres</a></li>
-                    <li><a href="#extras" title="Dans votre chambre">Les services</a></li>
-                    <li><a href="#join-us" title="Google Maps">Nous trouver</a></li>
-                    <li><a href="#join-us" title="Réserver, nous écrire">Réserver</a></li>
-                    <li><a href="#biking" title="Bienvenue aux &#10; cyclistes">L'accueil vélo</a></li>
-                    <li><a href="#discovering" title="A découvrir">La région</a></li>
-                </ul>
-            </nav>
+            <?php require 'structure/header.php'; ?>
         </header>
 
         <main>
@@ -217,12 +224,12 @@ if(isset($_SESSION['message_sent'])) {
                 
                 <div class="contact">
                     <a href="tel:+33641614344"><article class="contact-card">
-                        <img class="contact-icon" src="./assets/phone.svg" alt="Téléphone" title="Numéro de téléphone"/>
+                        <img class="contact-icon" src="./assets/phone.svg" alt="Téléphone" title="+33 (0)6 41 61 43 44"/>
                         <h4>Appelez-nous</h4>
                     </article></a>
 
                     <a href="#join-us" id="open-contact-modal"><article class="contact-card">
-                        <img class="contact-icon" src="./assets/arobase.svg" alt="Climatisation" title="Adresse mail"/>
+                        <img class="contact-icon" src="./assets/arobase.svg" alt="Climatisation" title="contact@deslitssurlaplace.fr"/>
                         <h4>Écrivez-nous</h4>
                     </article></a>
 
@@ -254,20 +261,7 @@ if(isset($_SESSION['message_sent'])) {
         </main>
 
         <footer>
-        <div class="menus-footer">
-                <article class="menu-footer logo-partenaires">
-
-                </article>
-                <article class="menu-footer policy-menu">
-                    
-                </article>
-                <article class="menu-footer">
-                    
-                </article>
-            </div>
-
-            <span class="copyright">&#xA9; des lits sur la place 2026</span><!--Le sigle cpoyright en debut de balise-->
-            <a href="#header-type" class="back-menu" title="Haut de page"><i class="fa-solid fa-arrow-up"></i></a>
+            <?php require 'structure/footer.php'; ?>
         </footer>
     
     <script src="./scripts/script.js"></script>

@@ -157,23 +157,10 @@ $biking_text = 'La labellisation <a class="text-link" href="https://www.franceve
                 Garage sécurisé, matériel de réparation, recharge des VAE, conseil d\'itinéraire...<br/> L\'essentiel pour une pause en toute serenité!';
 
 $mail_dest = "lesgensdelaplace@orange.fr";
+
+$footerText = 'Lorem ipsum dolor sit amet. Et ullam reiciendis et asperiores Quis id recusandae libero ut galisum voluptatem qui omnis nihil. Ut explicabo 
+omnis eos cupiditate voluptas est eligendi rerum sit minus velit et porro repellat et voluptas nihil. Et quia explicabo quo dolore nulla in eligendi nihil 
+sit temporibus perspiciatis ab laborum provident ea tempore placeat.';
                 //FONCTIONS SPÉCIFIQUES
-
-function sendMailContact($arg_nom, $arg_prenom, $arg_mail, $arg_phone, $arg_message){
-
-    $to = $mail_dest;
-    $subject = "Nouveau message de " . $arg_nom . " " . $arg_prenom;
-    $message_body = "
-    Nom : $arg_nom<br/>
-    Prénom : $arg_prenom<br/>
-    Email : $arg_mail<br/>
-    Téléphone : $arg_phone<br/>
-    Message :<br/>$arg_message";
-
-    $headers = "From : $arg_mail\r\n";
-    $headers .= "reply-to: $arg_mail\r\n";
-
-    mail($to, $subject, $body, $headers);
-}
-
+    
 ?>
