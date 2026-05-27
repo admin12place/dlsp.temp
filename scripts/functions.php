@@ -1,4 +1,5 @@
 <?php
+
 $tab_rooms = [
     'mobile-rooms' => [
         'position' => 'only-mobile',
@@ -26,18 +27,18 @@ $tab_rooms = [
         'room-text' => '82€ la nuit pour 2 personnes, petit déjeuner compris.'
     ],
 
-'sienne-alizarine' => [
-    'position' => 'pair-room',
-    'img-alt' => 'Des lits sur la place, chambre Sienne',
-    'img-src' => './images/WP_359.jpg',
-    'room-title' => 'Chambre Sienne,<br/>chambre Alizarine',
-    'room-surface' => 'De 21 à 24 m2 (2 personnes)',
-    'room-bed' => 'Lit double 180 X 200, séparable',
-    'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
-    'room-clim' => 'Climatisation',
-    'room-xtras' => 'Télévision & Wifi gratuits',
-    'room-text' => '89€ la nuit pour 2 personnes, petit déjeuner compris.'
-],
+    'sienne-alizarine' => [
+        'position' => 'pair-room',
+        'img-alt' => 'Des lits sur la place, chambre Sienne',
+        'img-src' => './images/WP_359.jpg',
+        'room-title' => 'Chambre Sienne,<br/>chambre Alizarine',
+        'room-surface' => 'De 21 à 24 m2 (2 personnes)',
+        'room-bed' => 'Lit double 180 X 200, séparable',
+        'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
+        'room-clim' => 'Climatisation',
+        'room-xtras' => 'Télévision & Wifi gratuits',
+        'room-text' => '89€ la nuit pour 2 personnes, petit déjeuner compris.'
+    ],
 
     'ombre' => [
         'position' => 'impair-room',

@@ -1,4 +1,18 @@
-<?php require_once './scripts/functions.php';?><!--INCLUSION DU FICHIER DE FONCTIONS PHP-->
+<?php require_once "./scripts/functions.php";?>
+<?php
+    /*use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\SMTP;
+    $mail = new PHPMailer(true);
+    require 'vendor/autoload.php';
+    $mail->isSMTP();
+    $mail->Host = 'smtp.texio.net';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'smtp@deslitssurlaplace.fr';
+    $mail->Password = 'hktdwfrt';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;*/
+?>
 
 <?php
 session_start();
