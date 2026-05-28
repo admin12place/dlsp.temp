@@ -1,9 +1,9 @@
 
 <div class="logo-title">
-    <a href="#"><img class="logo" src="./images/logo-dlsp-alpha.webp" alt="Logo Des lits sur la place"/></a>
+    <a href="/index.php"><img class="logo" src="./images/logo-dlsp-alpha.webp" alt="Logo Des lits sur la place"/></a>
     <div class="titles">
         <!--<h2>DES LITS SUR LA PLACE</h2>-->
-        <h1>Chambres d'hôtes en Occitanie</h1>
+        
     </div>
     <article class="details">
         <div class="phone header-phone">
@@ -20,5 +20,5 @@
 </div>
 
 <nav class="main-menu">
-<?php require 'structure/main-menu.php'; ?>
+    <?php require 'structure/main-menu.php'; ?>
 </nav>

@@ -7,21 +7,21 @@
     </article>
 
     <article class="logo-partenaires">
-        <h3>Nos partenaires</h3>
-        <span><a href="#">Un lien au hasard</a></span>
-    </article>
-
-    <article class="policy-menu">
-    <h3><span>Mentions légales,</span><br/><span>confidentialité</span></h3>
-        <a href="#">Un autre lien au hasard</a>      
+            <span><a href="#"><img src="./assets/pnrhl-icon.webp"></a></span>
+            <span><a href="#"><img src="./assets/gdf-icon.webp"></a></span>
+            <span><a href="#"><img src="./assets/accueil_velo_icon.webp"></a></span>
     </article>
 
     <article class="main-menu-footer">
-        <h3></h3>
         <?php require 'structure/main-menu.php'; ?>
     </article>
 </div>
 
-<span class="copyright">&#xA9; des lits sur la place 2026</span><!--Le sigle cpoyright en debut de balise-->
+<span class="copyright">
+    <span>&#xA9; des lits sur la place 2026. tous droits réservés</span>
+    <a href="#">Mentions légales</a>
+    <a href="/policy.php">Politique de confidentialité</a>
+</span><!--Le sigle cpoyright en debut de balise-->
+
 <a href="#header-type" class="back-menu" title="Haut de page"><i class="fa-solid fa-arrow-up"></i></a>
         

@@ -10,8 +10,9 @@ $tab_rooms = [
         'room-bed' => 'De 2 à 4 couchages, lits séparables',
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
-        'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => 'De 82 à 97 € la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-xtras' => 'Télévision & Wifi',
+        'room-text' => 'De 82 à 97 € la nuit pour 2 personnes, petit déjeuner compris.',
+        'icones' => ['square-icon.png', 'bed-icon.png', 'clim-icon.png', 'shower-icon.png', 'wifi-icon.png', 'tv-icon.png']
     ],
 
     'celadon' => [
@@ -23,8 +24,9 @@ $tab_rooms = [
         'room-bed' => 'Lit double 180 X 200',
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation naturelle',
-        'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => '82€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-xtras' => 'Télévision & Wifi',
+        'room-text' => '82€ la nuit pour 2 personnes, petit déjeuner compris.',
+        'icones' => ['bed-icon.png', 'shower-icon.png', 'wifi-icon.png', 'tv-icon.png']
     ],
 
     'sienne-alizarine' => [
@@ -36,8 +38,9 @@ $tab_rooms = [
         'room-bed' => 'Lit double 180 X 200, séparable',
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
-        'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => '89€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-xtras' => 'Télévision & Wifi',
+        'room-text' => '89€ la nuit pour 2 personnes, petit déjeuner compris.',
+        'icones' => ['bed-icon.png', 'clim-icon.png', 'shower-icon.png', 'wifi-icon.png', 'tv-icon.png']
     ],
 
     'ombre' => [
@@ -49,8 +52,9 @@ $tab_rooms = [
         'room-bed' => 'Lit double 180 X 200, séparable,<br/>lit double 160 X200 en mezzanine',
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
-        'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => '97€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-xtras' => 'Télévision & Wifi',
+        'room-text' => '97€ la nuit pour 2 personnes, petit déjeuner compris.',
+        'icones' => ['bed-icon.png', 'clim-icon.png', 'shower-icon.png', 'wifi-icon.png', 'tv-icon.png']
     ],
 
     'pouzolle' => [
@@ -59,11 +63,12 @@ $tab_rooms = [
         'img-src' => './images/WP_359.jpg',
         'room-title' => 'Chambre Terre de Pouzolle',
         'room-surface' => '31 m2 (2 à 4 personnes)',
-        'room-bed' => 'Lit double 180 X 200, séparable, 2 lits single',
+        'room-bed' => 'Lit double 180 X 200, séparable, 2 lits single 90X200',
         'room-bath' => 'Salle de bain privative,douche, wc, lavabo',
         'room-clim' => 'Climatisation',
-        'room-xtras' => 'Télévision & Wifi gratuits',
-        'room-text' => '97€ la nuit pour 2 personnes, petit déjeuner compris.'
+        'room-xtras' => 'Télévision & Wifi',
+        'room-text' => '97€ la nuit pour 2 personnes, petit déjeuner compris.',
+        'icones' => ['bed-icon.png', 'clim-icon.png', 'shower-icon.png', 'wifi-icon.png', 'tv-icon.png']
     ],
 ];
 
@@ -132,11 +137,11 @@ Madale, partir à la découverte de vignerons très indépendants et goûter leu
 profiter des derniers rayons du soleil au bord de l\'Orb.</span>
 <span class="like_paragraf">Et faire son lit sur la place...</span>';
 
-$main_text2 = '<span class="like_paragraf">Nous vous proposons toute l\'année cinq jolies chambres dans notre maison de village du 19eme siècle, chacune de 
+$main_text2 = '<span class="like_paragraf">Marion & Thierry vous proposent toute l\'année cinq jolies chambres dans leur maison de village du 19eme siècle, chacune de 
 caractère mais offrant toutes un confort d\'aujourd\'hui. Vous pourrez profiter de la terrasse pour des petits 
 déjeuners au soleil, ou dans la salle commune les autres jours.</span>
-<span class="like_paragraf">Nos chambres peuvent accueillir de deux à quatre personnes.</span>
-<span class="like_paragraf"><h5>À partir de 82€ la nuit pour 2 personnes, petit déjeuner compris.</h5></span>';
+<span class="like_paragraf">Les chambres peuvent accueillir de deux à quatre personnes <b>(les animaux ne sont pas admis)</b>.</span>
+<span class="like_paragraf"></span>';
 
 $rooms_text = 'Linge 100% coton - Savon, shampoing, linge de toilette et sèche-cheveux fournis - 
 Lit parapluie disponible sur demande pour un enfant de moins de 2 ans - 

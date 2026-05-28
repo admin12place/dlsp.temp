@@ -1,18 +1,5 @@
+
 <?php require_once "./scripts/functions.php";?>
-<?php
-    /*use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
-    use PHPMailer\PHPMailer\SMTP;
-    $mail = new PHPMailer(true);
-    require 'vendor/autoload.php';
-    $mail->isSMTP();
-    $mail->Host = 'smtp.texio.net';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'smtp@deslitssurlaplace.fr';
-    $mail->Password = 'hktdwfrt';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;*/
-?>
 
 <?php
 session_start();
@@ -52,7 +39,8 @@ if(isset($_POST['nom'])) {
             $mail->isHTML(true);
             $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
             $mail->addReplyTo = $mail;
-            $mail->addAddress('lesgensdelaplace@orange.fr');
+            $mail->addAddress('contact@deslitssurlaplace.fr');
+            $mail->addCC('lesgensdelaplace@orange.fr');
             $mail->Subject = 'Nouveau message de test';
             $mail->Body = $bodyMail;
             $mail->send();
@@ -125,6 +113,7 @@ if(isset($_SESSION['message_sent'])) {
             <section id="presentation">
                 <div class="banner">
                     <h2 class="section-title">Des lits sur la place</h2>
+                    <h1>Chambres d'hôtes en Occitanie</h1>
                     <h3 class="section-undertitle">au coeur du parc du Haut-Languedoc</h3>
                 </div>
                 <div class="main-text">
@@ -153,6 +142,12 @@ if(isset($_SESSION['message_sent'])) {
                                     <li><?= $room['room-xtras'] ?></li>
                                 </ul>
                                 <span class="room-text"><?= $room['room-text'] ?></span>
+                                <p class="room-icons">
+                                    <?php foreach ($room['icones'] as $icone): ?>
+                                        <img class="mini-icons" src="./assets/<?= $icone; ?>" alt="Icônes de services" />
+                                    <?php endforeach;?>
+                                </p>
+
                             </div>
                         </div>
                         <span class="divite"><img src="./assets/1131825.png"/></span>
@@ -181,7 +176,7 @@ if(isset($_SESSION['message_sent'])) {
                 </div>
 
                 <div class="main-text">
-                    <h4 class="center text-subtitle">Et pour un séjour complet...</h4>
+                    <h4 class="center text-subtitle">Et pour une expérience complète...</h4>
                     <p><?php echo $xtra_text;?></p>
                 </div>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
@@ -204,17 +199,13 @@ if(isset($_SESSION['message_sent'])) {
             </section>
 
             <section id="biking">
-                <!--<div class="reach-title">-->
-                    <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
-                <!--</div>-->
-                <p class="main-text"><?php echo $biking_text;?></p>
-                <div id="slider">
-                    <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Découvrir le Parc"/>
-                </div>
 
-                <div class="main-text">
-                    <p></p>
-                </div>
+                    <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
+
+                <article class="biking-article">
+                    <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Randovelo34.fr - Les Bardenas realesS"/>
+                    <p class="main-text"><?php echo $biking_text;?></p>
+                </article>
                 <span class="divite"><img src="./assets/1131825.png"/></span>
             </section>
 
@@ -245,14 +236,14 @@ if(isset($_SESSION['message_sent'])) {
                         allowfullscreen="" loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
-                    <ul class="map-text">
-                        <li>Dépose minute devant le bâtiment.</li>
-                        <li>Parking gratuit à 150 m<br/>(bornes de recharge electrique).</li>
-                        <li>Garage sécurisé pour les vélos.</li>
-                        <li>Arrivée à partir de 16 heures.</li>
-                        <li>Voie verte PassaPaïs à 200 m.</li>
-                        <li>Gare de Bédarieux à 3 km.</li>
-                    </ul>
+                    <div class="map-text">
+                        <li>Dépose minute devant le bâtiment</li>
+                        <li>Parking gratuit à 150 m</li>
+                        <li>Garage sécurisé pour les vélos</li>
+                        <li class="evidence">Arrivée à partir de 16 heures</li>
+                        <li>Voie verte PassaPaïs à 200 m</li>
+                        <li>Gare de Bédarieux à 3 km</li>
+                    </div>
                 </div>
                 
                 <div class="contact-form"><?php include './templates/modalContact.php'; ?></div>

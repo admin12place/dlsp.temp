@@ -3,7 +3,8 @@
   width: 35%;
   max-width: 500px;
   min-width: 350px;
-  max-height: 80%;
+  height: -moz-fit-content;
+  height: fit-content;
   border: 5px solid #000000;
   border-radius: 25px;
   display: none;
@@ -86,7 +87,34 @@
 
 @media (max-width: 530px) {
   #modal-contact {
-    width: 350px;
+    width: 340px;
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
-/******************FIN MODALE DE CONTACT*****************//*# sourceMappingURL=parts.css.map */
+@media screen and (orientation: landscape) and (max-height: 850px) {
+  #modal-contact {
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+}
+/******************FIN MODALE DE CONTACT*****************/
+/**************************POLICY************************/
+#policy-contain header nav {
+  display: none;
+}
+#policy-contain main {
+  width: 80%;
+  margin: 2vw auto;
+}
+#policy-contain main h1.policy {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  margin-bottom: 2vw;
+}
+#policy-contain main h2 {
+  font-size: 15px;
+  margin-top: 1vw;
+  margin-bottom: 0.2vw;
+}/*# sourceMappingURL=parts.css.map */

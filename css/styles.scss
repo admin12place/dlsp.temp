@@ -74,6 +74,12 @@ p .like_paragraf {
     text-align: center;
 }
 
+h1 {
+    color: $white-white;
+    font-size: 2vw;
+    margin: 0.2vw;
+}
+
 h2, h3, h4 {
     color: $title-shadow;
     text-shadow: 2px 2px 5px $title-shadow;
@@ -130,6 +136,9 @@ section {
 a {
     text-decoration: none;
     color: $main-text-color;
+    &:hover {
+        text-shadow: 2px 2px 5px $title-shadow;
+    }
 }
 
 .back-menu{//bouton de retour vers le haut de page
@@ -222,9 +231,6 @@ header {
                     color: $black-black;
                     font-size: clamp( 15px, 1.2vw, 18px);
                     transition: 0.5s;
-                    &:hover {
-                        text-shadow: 2px 2px 5px $title-shadow;
-                    }
                     .icons {
                         transition: 0.5s;
                         &:hover {
@@ -244,6 +250,7 @@ header {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         background-image: url("/images/20240508_vue_drone.webp");
         width: 100%;
         height: 500px;
@@ -257,7 +264,7 @@ header {
         color: $white-white;
     }
     h2 {
-        font-size: clamp(14px, 3.5vw, 24px);
+        font-size: clamp(14px, 3.5vw, 58px);
     }
     h3 {
         font-size: 2vw;
@@ -278,7 +285,7 @@ header {
             margin: 3vw 0 2vw 0;
             .text-room-contain {
                 min-width: 40%;
-                padding: 0 1vw;
+                margin: 0 4vw;
                 h4 {
                     text-align: center;
                     margin: 1vw 2vw;
@@ -295,6 +302,14 @@ header {
                 span.room-text {
                     line-height: 1.3em;
                     font-size: clamp( 14px, 1.2vw, 16px);
+                }
+                .room-icons {
+                    display: flex;
+                    justify-content: flex-start;
+                    gap: 2vw;
+                    img.mini-icons {
+                        width: 5vw;
+                    }
                 }
             }
             .img-room-contain {
@@ -401,9 +416,15 @@ header {
 }
 
 #biking {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    gap: 4vw;
+    margin: auto;
     h3.section-title {
         display: flex;
-	    align-items: flex-end;
+	    align-items: center;
         justify-content: center;
 	    gap: 12px;
         &::before {
@@ -417,16 +438,20 @@ header {
             background-position: center;
         }
     }
-    #slider {
-        width: 100%;
-        position: relative;
-        left:50%;
-        transform: translateX(-40%);
-        transition: opacity 0.7s ease;
+    .biking-article {
+        display: flex;
+        flex-direction: row;
+        gap: 3vw;
+        align-items: center;
+        justify-content: center;
         .slider-image {
-            width: 80%;
+            display: block;
+            width: 70%;
+            max-width: 80vw;
             border-radius: 5vw;
-            background-color: #000000;
+        }
+        .main-text {
+            width: 30%;
         }
     }
 }
@@ -455,6 +480,12 @@ header {
             line-height: 20px;
             li {
                 margin-bottom: 1.2vw;
+                width: fit-content;
+                padding: 3px 5px 0px 5px;
+                &.evidence {
+                    border: 2px solid red;
+                    border-radius: 1em;
+                }
             }
         }
     }
@@ -509,6 +540,9 @@ footer {
     border-top: 2px solid $main-text-color;
     color: $black-black;
     .copyright {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
         padding: 2vw;
         text-align: center;
     }
@@ -519,8 +553,6 @@ footer {
         justify-content: space-between;
         gap: 2vw;
         .site-description,
-        .logo-partenaires,
-        .policy-menu,
         .main-menu-footer {
             display: flex;
             flex-direction: column;
@@ -528,27 +560,63 @@ footer {
             width: clamp(150px, 33.33%, 350px);
             max-height: 280px;
             padding: 1vw;
-            border: 1px solid $green-green;
-            border-radius: 1vw;
-            background-color: $white-cream;
             .logo-left {
                 float: left;
                 margin-right: 10px;
                 margin-bottom: 0px;
-                width: 100px;
+                width: 80px;
+            }
+            a {
+                font-size: clamp(10px, 0.7vw, 12px); 
             }
         }
+        .main-menu-footer {
+            width: clamp(150px, 15%, 350px);
+            justify-content: right;
+        }
+        .logo-partenaires {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            width: clamp(150px, 43.33%, 500px);
+
+            span {
+                display: block;
+                width: 20%;
+                a img{
+                    width: 100%;
+                    height: auto;
+                    transform: scale(1);
+                    transition: 0.5s ease;
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+    }    
     }
     h3 {
-        font-size: 1.2vw;
+        font-size: clamp(12px, 1vw, 14px);
         text-shadow: none;
         text-align: center;
+        margin: 0.5vw;
     }
     p {
         margin: 0;
-        font-size: 0.7vw;
-        line-height: 1vw;
+        font-size: clamp(10px, 0.7vw, 12px);
+        line-height: clamp(10px, 1vw, 12px);
     }
+    ul {
+        margin: auto;
+        padding: 0;
+        li {
+        list-style: none;
+        line-height: clamp(12px, 1vw, 24px);
+        font-size: clamp(12px, 0.7vw, 15px);
+        text-align: center;
+        }
+    }
+    
 }
 
 
@@ -561,17 +629,44 @@ footer {
     p {
         line-height: 20px;
     }
+    #biking {
+        .biking-article {
+            flex-direction: column;
+            .slider-image {
+                width: 100%;
+            }
+            .main-text {
+                width: 90%;
+            }
+        }
+    }
     #join-us {
         .place-map {
             flex-direction: column;
-            align-items: center;
+            margin: auto;
             iframe {
-                width: 90%;
+                width: 80vw;
                 min-height: 200px;
             }
             .map-text {
-                max-width: 90%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 100%;
+                li{
+                    display: none;
+                    &.evidence {
+                        display: flex;
+                        min-width: 225px;
+                        margin: 0;
+                    }
+                }
             }
+        }
+    }
+    footer{
+        .menus-footer{
+            display: none;
         }
     }
 }
@@ -627,7 +722,7 @@ footer {
                 .section-title {
                     font-size: clamp(18px, 6vw, 48px);
                 }
-                .section-undertitle {
+                h1, .section-undertitle {
                     font-size: clamp(14px, 3vw, 36px);
                 }
             }

@@ -59,6 +59,12 @@ p .like_paragraf {
   text-align: center;
 }
 
+h1 {
+  color: #ffffff;
+  font-size: 2vw;
+  margin: 0.2vw;
+}
+
 h2, h3, h4 {
   color: #577066;
   text-shadow: 2px 2px 5px #577066;
@@ -114,6 +120,9 @@ section {
 a {
   text-decoration: none;
   color: #2a3631;
+}
+a:hover {
+  text-shadow: 2px 2px 5px #577066;
 }
 
 .back-menu {
@@ -209,9 +218,6 @@ header .main-menu ul.menu-items li a {
   font-size: clamp(15px, 1.2vw, 18px);
   transition: 0.5s;
 }
-header .main-menu ul.menu-items li a:hover {
-  text-shadow: 2px 2px 5px #577066;
-}
 header .main-menu ul.menu-items li a .icons {
   transition: 0.5s;
 }
@@ -226,6 +232,7 @@ header .main-menu ul.menu-items li a .icons:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-image: url("/images/20240508_vue_drone.webp");
   width: 100%;
   height: 500px;
@@ -239,7 +246,7 @@ header .main-menu ul.menu-items li a .icons:hover {
   color: #ffffff;
 }
 #presentation h2 {
-  font-size: clamp(14px, 3.5vw, 24px);
+  font-size: clamp(14px, 3.5vw, 58px);
 }
 #presentation h3 {
   font-size: 2vw;
@@ -262,7 +269,7 @@ header .main-menu ul.menu-items li a .icons:hover {
 }
 #rooms .room-contain .impair-room .text-room-contain, #rooms .room-contain .pair-room .text-room-contain, #rooms .room-contain .only-mobile .text-room-contain {
   min-width: 40%;
-  padding: 0 1vw;
+  margin: 0 4vw;
 }
 #rooms .room-contain .impair-room .text-room-contain h4, #rooms .room-contain .pair-room .text-room-contain h4, #rooms .room-contain .only-mobile .text-room-contain h4 {
   text-align: center;
@@ -280,6 +287,14 @@ header .main-menu ul.menu-items li a .icons:hover {
 #rooms .room-contain .impair-room .text-room-contain span.room-text, #rooms .room-contain .pair-room .text-room-contain span.room-text, #rooms .room-contain .only-mobile .text-room-contain span.room-text {
   line-height: 1.3em;
   font-size: clamp(14px, 1.2vw, 16px);
+}
+#rooms .room-contain .impair-room .text-room-contain .room-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 2vw;
+}
+#rooms .room-contain .impair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons img.mini-icons {
+  width: 5vw;
 }
 #rooms .room-contain .impair-room .img-room-contain, #rooms .room-contain .pair-room .img-room-contain, #rooms .room-contain .only-mobile .img-room-contain {
   max-width: 60%;
@@ -378,9 +393,17 @@ header .main-menu ul.menu-items li a .icons:hover {
   cursor: pointer;
 }
 
+#biking {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  align-items: center;
+  gap: 4vw;
+  margin: auto;
+}
 #biking h3.section-title {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 12px;
 }
@@ -394,17 +417,21 @@ header .main-menu ul.menu-items li a .icons:hover {
   background-repeat: no-repeat;
   background-position: center;
 }
-#biking #slider {
-  width: 100%;
-  position: relative;
-  left: 50%;
-  transform: translateX(-40%);
-  transition: opacity 0.7s ease;
+#biking .biking-article {
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+  align-items: center;
+  justify-content: center;
 }
-#biking #slider .slider-image {
-  width: 80%;
+#biking .biking-article .slider-image {
+  display: block;
+  width: 70%;
+  max-width: 80vw;
   border-radius: 5vw;
-  background-color: #000000;
+}
+#biking .biking-article .main-text {
+  width: 30%;
 }
 
 #join-us {
@@ -434,6 +461,13 @@ header .main-menu ul.menu-items li a .icons:hover {
 }
 #join-us .place-map .map-text li {
   margin-bottom: 1.2vw;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 3px 5px 0px 5px;
+}
+#join-us .place-map .map-text li.evidence {
+  border: 2px solid red;
+  border-radius: 1em;
 }
 #join-us .contact {
   width: 90%;
@@ -486,6 +520,9 @@ footer {
   color: #000000;
 }
 footer .copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   padding: 2vw;
   text-align: center;
 }
@@ -497,8 +534,6 @@ footer .menus-footer {
   gap: 2vw;
 }
 footer .menus-footer .site-description,
-footer .menus-footer .logo-partenaires,
-footer .menus-footer .policy-menu,
 footer .menus-footer .main-menu-footer {
   display: flex;
   flex-direction: column;
@@ -506,28 +541,61 @@ footer .menus-footer .main-menu-footer {
   width: clamp(150px, 33.33%, 350px);
   max-height: 280px;
   padding: 1vw;
-  border: 1px solid #226b4e;
-  border-radius: 1vw;
-  background-color: #f5eedd;
 }
 footer .menus-footer .site-description .logo-left,
-footer .menus-footer .logo-partenaires .logo-left,
-footer .menus-footer .policy-menu .logo-left,
 footer .menus-footer .main-menu-footer .logo-left {
   float: left;
   margin-right: 10px;
   margin-bottom: 0px;
-  width: 100px;
+  width: 80px;
+}
+footer .menus-footer .site-description a,
+footer .menus-footer .main-menu-footer a {
+  font-size: clamp(10px, 0.7vw, 12px);
+}
+footer .menus-footer .main-menu-footer {
+  width: clamp(150px, 15%, 350px);
+  justify-content: right;
+}
+footer .menus-footer .logo-partenaires {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: clamp(150px, 43.33%, 500px);
+}
+footer .menus-footer .logo-partenaires span {
+  display: block;
+  width: 20%;
+}
+footer .menus-footer .logo-partenaires span a img {
+  width: 100%;
+  height: auto;
+  transform: scale(1);
+  transition: 0.5s ease;
+}
+footer .menus-footer .logo-partenaires span a img:hover {
+  transform: scale(1.2);
 }
 footer h3 {
-  font-size: 1.2vw;
+  font-size: clamp(12px, 1vw, 14px);
   text-shadow: none;
   text-align: center;
+  margin: 0.5vw;
 }
 footer p {
   margin: 0;
-  font-size: 0.7vw;
-  line-height: 1vw;
+  font-size: clamp(10px, 0.7vw, 12px);
+  line-height: clamp(10px, 1vw, 12px);
+}
+footer ul {
+  margin: auto;
+  padding: 0;
+}
+footer ul li {
+  list-style: none;
+  line-height: clamp(12px, 1vw, 24px);
+  font-size: clamp(12px, 0.7vw, 15px);
+  text-align: center;
 }
 
 @media (max-width: 950px) {
@@ -537,16 +605,39 @@ footer p {
   p {
     line-height: 20px;
   }
+  #biking .biking-article {
+    flex-direction: column;
+  }
+  #biking .biking-article .slider-image {
+    width: 100%;
+  }
+  #biking .biking-article .main-text {
+    width: 90%;
+  }
   #join-us .place-map {
     flex-direction: column;
-    align-items: center;
+    margin: auto;
   }
   #join-us .place-map iframe {
-    width: 90%;
+    width: 80vw;
     min-height: 200px;
   }
   #join-us .place-map .map-text {
-    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+  }
+  #join-us .place-map .map-text li {
+    display: none;
+  }
+  #join-us .place-map .map-text li.evidence {
+    display: flex;
+    min-width: 225px;
+    margin: 0;
+  }
+  footer .menus-footer {
+    display: none;
   }
 }
 @media (max-width: 768px) {
@@ -594,7 +685,7 @@ footer p {
   main #presentation .banner .section-title {
     font-size: clamp(18px, 6vw, 48px);
   }
-  main #presentation .banner .section-undertitle {
+  main #presentation .banner h1, main #presentation .banner .section-undertitle {
     font-size: clamp(14px, 3vw, 36px);
   }
   main #extras .articles-wrapper .articles {
