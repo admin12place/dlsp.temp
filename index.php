@@ -119,7 +119,7 @@ if(isset($_SESSION['message_sent'])) {
                 <div class="main-text">
                     <p><?php echo $main_text1;?></p><p><?php echo $main_text2;?></p>
                 </div>
-                <span class="divite"><img src="./assets/1131825.png"/></span>
+                <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
             </section>
 
             <section id="rooms">
@@ -150,7 +150,7 @@ if(isset($_SESSION['message_sent'])) {
 
                             </div>
                         </div>
-                        <span class="divite"><img src="./assets/1131825.png"/></span>
+                        <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
                     </div>
                     
                     <?php } endforeach; ?>
@@ -179,7 +179,7 @@ if(isset($_SESSION['message_sent'])) {
                     <h4 class="center text-subtitle">Et pour une expérience complète...</h4>
                     <p><?php echo $xtra_text;?></p>
                 </div>
-                <span class="divite"><img src="./assets/1131825.png"/></span>
+                <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
             </section>
                 
             <section id="discovering">
@@ -195,7 +195,7 @@ if(isset($_SESSION['message_sent'])) {
 			            <img class="arrow arrow_right"  src="./assets/arrow_right.png" alt="Image suivante"/>
                     </div>
                 </div>
-                <span class="divite"><img src="./assets/1131825.png"/></span>
+                <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
             </section>
 
             <section id="biking">
@@ -206,7 +206,7 @@ if(isset($_SESSION['message_sent'])) {
                     <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Randovelo34.fr - Les Bardenas realesS"/>
                     <p class="main-text"><?php echo $biking_text;?></p>
                 </article>
-                <span class="divite"><img src="./assets/1131825.png"/></span>
+                <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
             </section>
 
             <section id="join-us">
@@ -234,7 +234,8 @@ if(isset($_SESSION['message_sent'])) {
                 <div class="place-map">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2889.6698214727203!2d3.114027476857337!3d43.59259327110507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b177f520af9c1b%3A0xf5a0f98b5a9f60cd!2sDes%20lits%20sur%20la%20place!5e0!3m2!1sfr!2sfr!4v1779022750244!5m2!1sfr!2sfr" 
                         allowfullscreen="" loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Carte Google Maps centrée sur Hérépian">
                     </iframe>
                     <div class="map-text">
                         <li>Dépose minute devant le bâtiment</li>

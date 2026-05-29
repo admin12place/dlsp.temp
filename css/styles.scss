@@ -53,9 +53,12 @@ p .like_paragraf {
     padding: 4px 3px 0px 3px;
     border: 1px solid $border-light;
     border-radius: 1vw;
+    transform: scale(1);
+    transition: 0.3s ease-in-out;
     &:hover {
         background-color: $white-cream;
         color: $green-green;
+        transform: scale(1.2);
     }
 }
 
@@ -251,11 +254,11 @@ header {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-image: url("/images/20240508_vue_drone.webp");
+        background-image: url("/images/20260624david0273.webp");
         width: 100%;
-        height: 500px;
+        aspect-ratio: 2.3;
         background-size: cover;
-        background-position: center;
+        background-position: 50% 65%;
         background-repeat: no-repeat;
         box-shadow: inset 0px 0px 30px 30px rgba(255,255,255,1);
     }
@@ -313,7 +316,7 @@ header {
                 }
             }
             .img-room-contain {
-                max-width: 60%;
+                max-width: 55%;
                 .img-room {
                     max-width: 100%;
                     height: auto;
@@ -327,6 +330,9 @@ header {
         }
         .pair-room {
             flex-direction: row-reverse;
+            .text-room-contain {
+                margin: 0 0 0 4vw;
+            }
         }
     }
 .only-mobile {
@@ -469,6 +475,11 @@ header {
             width: 40vw;
             height: 20vw;
             border-radius: 3vw;
+            transform: scale(1);
+            transition: 0.5s ease;
+            &:hover {
+                transform: scale(1.3);
+            }
         }
         .map-text {
             display: flex;
