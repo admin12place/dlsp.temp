@@ -282,7 +282,7 @@ header {
     .room-contain {
         display: flex;
         flex-direction: column;
-        .impair-room, .pair-room, .only-mobile {
+        .impair-room, .pair-room, .article-mobile, .only-mobile {
             display: flex;
             align-items: center;
             margin: 3vw 0 2vw 0;
@@ -316,7 +316,7 @@ header {
                 }
             }
             .img-room-contain {
-                max-width: 55%;
+                width: 55%;
                 .img-room {
                     max-width: 100%;
                     height: auto;
@@ -721,11 +721,33 @@ footer {
         .impair-room, .pair-room {
             display: none;
         }
-        .only-mobile {
+        .room-contain.only-mobile {
             display: flex;
-            .img-room-contain {
-                width: 90%;
-                min-width: 90%;
+            align-items: center;
+            .article-mobile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 100%;
+                .img-room-contain {
+                    position: relative;
+                    width: 90%;
+                    aspect-ratio: 4 / 3;
+                    .img-room-mobile {
+                        position: absolute;
+                        border-radius: 10%;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        opacity: 0;
+                        transition: opacity 0.6s ease;
+                        pointer-events: none;
+                    }
+                    .img-room-mobile.active {
+                        opacity: 1;
+                        pointer-events: auto;
+                    }
+                }
             }
         }
     }
@@ -781,10 +803,12 @@ footer {
     #discovering, #biking {
         display: none;
     }
-    li:has(a[href="#discovering"]),
-    li:has(a[href="#biking"]){
+    
+    li:has(a[href='/index.php#biking']),
+    li:has(a[href='/index.php#discovering']) {
         display: none;
     }
+
     #rooms {
         margin: 6vw 3vw;
         .main-text {
@@ -813,6 +837,5 @@ footer {
         ul.map-text {
             padding: 0;
         }
-    } 
+    }
 }
-

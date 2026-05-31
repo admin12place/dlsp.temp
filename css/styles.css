@@ -265,44 +265,44 @@ header .main-menu ul.menu-items li a .icons:hover {
   display: flex;
   flex-direction: column;
 }
-#rooms .room-contain .impair-room, #rooms .room-contain .pair-room, #rooms .room-contain .only-mobile {
+#rooms .room-contain .impair-room, #rooms .room-contain .pair-room, #rooms .room-contain .article-mobile, #rooms .room-contain .only-mobile {
   display: flex;
   align-items: center;
   margin: 3vw 0 2vw 0;
 }
-#rooms .room-contain .impair-room .text-room-contain, #rooms .room-contain .pair-room .text-room-contain, #rooms .room-contain .only-mobile .text-room-contain {
+#rooms .room-contain .impair-room .text-room-contain, #rooms .room-contain .pair-room .text-room-contain, #rooms .room-contain .article-mobile .text-room-contain, #rooms .room-contain .only-mobile .text-room-contain {
   min-width: 40%;
   margin: 0 4vw;
 }
-#rooms .room-contain .impair-room .text-room-contain h4, #rooms .room-contain .pair-room .text-room-contain h4, #rooms .room-contain .only-mobile .text-room-contain h4 {
+#rooms .room-contain .impair-room .text-room-contain h4, #rooms .room-contain .pair-room .text-room-contain h4, #rooms .room-contain .article-mobile .text-room-contain h4, #rooms .room-contain .only-mobile .text-room-contain h4 {
   text-align: center;
   margin: 1vw 2vw;
   font-size: clamp(1.5rem, 1.7vw, 7rem);
 }
-#rooms .room-contain .impair-room .text-room-contain ul, #rooms .room-contain .pair-room .text-room-contain ul, #rooms .room-contain .only-mobile .text-room-contain ul {
+#rooms .room-contain .impair-room .text-room-contain ul, #rooms .room-contain .pair-room .text-room-contain ul, #rooms .room-contain .article-mobile .text-room-contain ul, #rooms .room-contain .only-mobile .text-room-contain ul {
   list-style: none;
   padding: 0;
 }
-#rooms .room-contain .impair-room .text-room-contain ul li, #rooms .room-contain .pair-room .text-room-contain ul li, #rooms .room-contain .only-mobile .text-room-contain ul li {
+#rooms .room-contain .impair-room .text-room-contain ul li, #rooms .room-contain .pair-room .text-room-contain ul li, #rooms .room-contain .article-mobile .text-room-contain ul li, #rooms .room-contain .only-mobile .text-room-contain ul li {
   margin: 0.4vw 0;
   font-size: clamp(14px, 1.2vw, 16px);
 }
-#rooms .room-contain .impair-room .text-room-contain span.room-text, #rooms .room-contain .pair-room .text-room-contain span.room-text, #rooms .room-contain .only-mobile .text-room-contain span.room-text {
+#rooms .room-contain .impair-room .text-room-contain span.room-text, #rooms .room-contain .pair-room .text-room-contain span.room-text, #rooms .room-contain .article-mobile .text-room-contain span.room-text, #rooms .room-contain .only-mobile .text-room-contain span.room-text {
   line-height: 1.3em;
   font-size: clamp(14px, 1.2vw, 16px);
 }
-#rooms .room-contain .impair-room .text-room-contain .room-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons {
+#rooms .room-contain .impair-room .text-room-contain .room-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons, #rooms .room-contain .article-mobile .text-room-contain .room-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons {
   display: flex;
   justify-content: flex-start;
   gap: 2vw;
 }
-#rooms .room-contain .impair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons img.mini-icons {
+#rooms .room-contain .impair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .article-mobile .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons img.mini-icons {
   width: 5vw;
 }
-#rooms .room-contain .impair-room .img-room-contain, #rooms .room-contain .pair-room .img-room-contain, #rooms .room-contain .only-mobile .img-room-contain {
-  max-width: 55%;
+#rooms .room-contain .impair-room .img-room-contain, #rooms .room-contain .pair-room .img-room-contain, #rooms .room-contain .article-mobile .img-room-contain, #rooms .room-contain .only-mobile .img-room-contain {
+  width: 55%;
 }
-#rooms .room-contain .impair-room .img-room-contain .img-room, #rooms .room-contain .pair-room .img-room-contain .img-room, #rooms .room-contain .only-mobile .img-room-contain .img-room {
+#rooms .room-contain .impair-room .img-room-contain .img-room, #rooms .room-contain .pair-room .img-room-contain .img-room, #rooms .room-contain .article-mobile .img-room-contain .img-room, #rooms .room-contain .only-mobile .img-room-contain .img-room {
   max-width: 100%;
   height: auto;
   border: 0px solid;
@@ -687,12 +687,34 @@ footer ul li {
   #rooms .impair-room, #rooms .pair-room {
     display: none;
   }
-  #rooms .only-mobile {
+  #rooms .room-contain.only-mobile {
     display: flex;
+    align-items: center;
   }
-  #rooms .only-mobile .img-room-contain {
+  #rooms .room-contain.only-mobile .article-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  #rooms .room-contain.only-mobile .article-mobile .img-room-contain {
+    position: relative;
     width: 90%;
-    min-width: 90%;
+    aspect-ratio: 4/3;
+  }
+  #rooms .room-contain.only-mobile .article-mobile .img-room-contain .img-room-mobile {
+    position: absolute;
+    border-radius: 10%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+  #rooms .room-contain.only-mobile .article-mobile .img-room-contain .img-room-mobile.active {
+    opacity: 1;
+    pointer-events: auto;
   }
   main #presentation .banner {
     height: 60vw;
@@ -726,8 +748,8 @@ footer ul li {
   #discovering, #biking {
     display: none;
   }
-  li:has(a[href="#discovering"]),
-  li:has(a[href="#biking"]) {
+  li:has(a[href="/index.php#biking"]),
+  li:has(a[href="/index.php#discovering"]) {
     display: none;
   }
   #rooms {

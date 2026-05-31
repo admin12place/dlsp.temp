@@ -198,3 +198,26 @@ const modalOpen = document.body.dataset.modalOpen;
 			submitBtn.disabled = true;	
 		};
 
+/*****************MODALE DES CHAMBRES*****************/
+
+/*****SLIDER DES IMAGES DE #ROOMS EN MEDIA QUERIES****/
+
+const imgRoomSlide = document.querySelectorAll('.img-room-mobile');
+
+let slideIndex = 0;
+
+// init
+imgRoomSlide.forEach((s, i) => {
+    if (i === 0) s.classList.add('active');
+});
+
+setInterval(nextRoomSlide, 2000);
+
+function nextRoomSlide() {
+
+    imgRoomSlide[slideIndex].classList.remove('active');
+
+    slideIndex = (slideIndex + 1) % imgRoomSlide.length;
+
+    imgRoomSlide[slideIndex].classList.add('active');
+}

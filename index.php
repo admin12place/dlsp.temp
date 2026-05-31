@@ -126,31 +126,61 @@ if(isset($_SESSION['message_sent'])) {
                 <h3 class="section-title">LES CHAMBRES</h3>
                 <div class="main-text"><p class=""><?php echo $rooms_text;?></p></div><!--si besoin-->
 
-                    <?php foreach ($tab_rooms as $room):{ ?>
-                    <div class="room-contain <?= $room['position'] ?>">
-                        <div class="<?= $room['position'] ?>">
-                            <div class="img-room-contain">
-                                <img class="img-room" src="<?= $room['img-src'] ?>" alt="<?= $room['img-alt'] ?>" />
+                    <?php foreach ($tab_rooms as $room):{ 
+                        if ($room['position'] === 'only-mobile') { ?>
+                            <div class="room-contain <?= $room['position']; ?>">
+                                <div class="article-mobile">
+                                    <div class="img-room-contain">
+                                        <?php foreach ($tab_rooms as $mobile_room):{ ?>
+                                            <img class="img-room-mobile" src="<?= $mobile_room['img-src']; ?>" alt="<?= $mobile_room['img-alt']; ?>" />
+                                        <?php } endforeach;?>
+                                    </div>
+                                    <div class="text-room-contain">
+                                        <h4><?= $room['room-title'] ?></h4>
+                                        <ul>
+                                            <li><?= $room['room-surface'] ?></li>
+                                            <li><?= $room['room-bed'] ?></li>
+                                            <li><?= $room['room-bath'] ?></li>
+                                            <li><?= $room['room-clim'] ?></li>
+                                            <li><?= $room['room-xtras'] ?></li>
+                                        </ul>
+                                        <span class="room-text"><?= $room['room-text'] ?></span>
+                                        <p class="room-icons">
+                                        <?php foreach ($room['icones'] as $icone): ?>
+                                            <img class="mini-icons" src="./assets/<?= $icone; ?>" alt="Icônes de services" />
+                                        <?php endforeach;?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
                             </div>
-                            <div class="text-room-contain">
-                                <h4><?= $room['room-title'] ?></h4>
-                                <ul>
-                                    <li><?= $room['room-surface'] ?></li>
-                                    <li><?= $room['room-bed'] ?></li>
-                                    <li><?= $room['room-bath'] ?></li>
-                                    <li><?= $room['room-clim'] ?></li>
-                                    <li><?= $room['room-xtras'] ?></li>
-                                </ul>
-                                <span class="room-text"><?= $room['room-text'] ?></span>
-                                <p class="room-icons">
-                                    <?php foreach ($room['icones'] as $icone): ?>
-                                        <img class="mini-icons" src="./assets/<?= $icone; ?>" alt="Icônes de services" />
-                                    <?php endforeach;?>
-                                </p>
 
-                            </div>
+                        <?php } else { ?>
+                            <div class="room-contain <?= $room['position']; ?>">
+                                <div class="<?= $room['position']; ?>">
+                                    <div class="img-room-contain">       
+                                        <img class="img-room" src="<?= $room['img-src']; ?>" alt="<?= $room['img-alt']; ?>" />
+                                    </div>
+                                    <div class="text-room-contain">
+                                        <h4><?= $room['room-title'] ?></h4>
+                                        <ul>
+                                            <li><?= $room['room-surface'] ?></li>
+                                            <li><?= $room['room-bed'] ?></li>
+                                            <li><?= $room['room-bath'] ?></li>
+                                            <li><?= $room['room-clim'] ?></li>
+                                            <li><?= $room['room-xtras'] ?></li>
+                                        </ul>
+                                        <span class="room-text"><?= $room['room-text'] ?></span>
+                                        <p class="room-icons">
+                                            <?php foreach ($room['icones'] as $icone): ?>
+                                            <img class="mini-icons" src="./assets/<?= $icone; ?>" alt="Icônes de services" />
+                                            <?php endforeach;?>
+                                        </p>
+                                    </div>
+                                </div>
+                                    <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
+                            </div><?php }?>
                         </div>
-                        <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>
                     </div>
                     
                     <?php } endforeach; ?>
