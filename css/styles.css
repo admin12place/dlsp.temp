@@ -459,7 +459,7 @@ header .main-menu ul.menu-items li a .icons:hover {
   transition: 0.5s ease;
 }
 #join-us .place-map iframe:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 #join-us .place-map .map-text {
   display: flex;
@@ -689,6 +689,10 @@ footer ul li {
   }
   #rooms .only-mobile {
     display: flex;
+  }
+  #rooms .only-mobile .img-room-contain {
+    width: 90%;
+    min-width: 90%;
   }
   main #presentation .banner {
     height: 60vw;

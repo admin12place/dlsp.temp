@@ -478,7 +478,7 @@ header {
             transform: scale(1);
             transition: 0.5s ease;
             &:hover {
-                transform: scale(1.3);
+                transform: scale(1.1);
             }
         }
         .map-text {
@@ -723,6 +723,10 @@ footer {
         }
         .only-mobile {
             display: flex;
+            .img-room-contain {
+                width: 90%;
+                min-width: 90%;
+            }
         }
     }
 

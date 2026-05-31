@@ -6,11 +6,16 @@
     height: fit-content;
     border: 5px solid #000000;
     border-radius: 25px;
-    display: none;
+    display: flex;
     position: fixed;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -60%);
     inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    
     * {
         font-family: "Special Elite", sans-serif;
     }
@@ -85,14 +90,21 @@
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
+    top: 50%;
     left: 50%;
-    
+    transform: translate(-50%, -60%);
+    z-index: 9999;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.7s ease, visibility 0.9s ease;
 }
 
 @media (max-width: 530px) {
     #modal-contact {
         width: 340px;
         height: fit-content;
+        top: 60%!important;
     }
 }
 
