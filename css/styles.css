@@ -709,11 +709,12 @@ footer ul li {
     left: 0;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.6s ease;
+    transition: opacity 0.8s ease;
     pointer-events: none;
   }
   #rooms .room-contain.only-mobile .article-mobile .img-room-contain .img-room-mobile.active {
     opacity: 1;
+    transition: opacity 0.8s ease;
     pointer-events: auto;
   }
   main #presentation .banner {

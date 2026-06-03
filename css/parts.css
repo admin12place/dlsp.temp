@@ -57,6 +57,9 @@
 #modal-contact .modal-form form fieldset .form-field input[type=submit]:hover, #modal-contact .modal-form form fieldset .form-field button:hover {
   cursor: pointer;
 }
+#modal-contact .modal-form form fieldset .form-field input.nospam {
+  display: none;
+}
 #modal-contact .modal-form form fieldset .form-field button {
   border-radius: 10px;
   color: red;

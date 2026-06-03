@@ -7,9 +7,9 @@
     </article>
 
     <article class="logo-partenaires">
-            <span><a href="https://www.parc-haut-languedoc.fr/"><img src="./assets/pnrhl-icon.webp" alt="Parc naturel Régional du Haut-Languedoc"></a></span>
-            <span><a href="https://www.gites-de-france.com/fr/occitanie/herault/des-lits-sur-la-place-34g11941?from=2026-06-18&to=2026-06-19&adults=2&children=0&infants=0"><img src="./assets/gdf-icon.webp" alt="Gîtes de France"></a></span>
-            <span><a href="https://www.francevelotourisme.com/hebergements?ville=H%C3%A9r%C3%A9pian%20%2834600%29&villeid=FR34119"><img src="./assets/accueil_velo_icon.webp"alt="Label Accueil Vélo"></a></span>
+            <span><a target="_blank" href="https://www.parc-haut-languedoc.fr/"><img src="./assets/pnrhl-icon.webp" alt="Parc naturel Régional du Haut-Languedoc"></a></span>
+            <span><a target="_blank" href="https://www.gites-de-france.com/fr/occitanie/herault/des-lits-sur-la-place-34g11941?from=2026-06-18&to=2026-06-19&adults=2&children=0&infants=0"><img src="./assets/gdf-icon.webp" alt="Gîtes de France"></a></span>
+            <span><a target="_blank" href="https://www.francevelotourisme.com/hebergements?ville=H%C3%A9r%C3%A9pian%20%2834600%29&villeid=FR34119"><img src="./assets/accueil_velo_icon.webp"alt="Label Accueil Vélo"></a></span>
     </article>
 
     <article class="main-menu-footer">

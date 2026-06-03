@@ -3,20 +3,34 @@
 
 <?php
 session_start();
+
+//echo PHP_VERSION;
+//$_SESSION['csrf_token'] = bin2hex(random_bytes(32));(version php7 et >)
+//$_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
 $send_message = "ENVOYEZ VOTRE MESSAGE";
 $modal_open = false;
+
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
-
 if(isset($_POST['nom'])) {
-    $nom = htmlspecialchars($_POST['nom']);
-    $prenom = htmlspecialchars($_POST['prenom']);
-    $mail = htmlspecialchars($_POST['mail']);
-    $phone = htmlspecialchars($_POST['phone']);
-    $message = htmlspecialchars($_POST['message']);
+    $nom = trim ( htmlspecialchars($_POST['nom']));
+    $prenom = trim ( htmlspecialchars($_POST['prenom']));
+    $mail = trim ( htmlspecialchars($_POST['mail']));
+    $phone = trim ( htmlspecialchars($_POST['phone']));
+    $message = trim ( htmlspecialchars($_POST['message']));
+    $adress = trim ( htmlspecialchars($_POST['adress']));
+
+    //sécurisation de l'expédition
+    if ( !isset($_POST['csrf_token']) || 
+    !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']) || 
+    !empty(trim($adress)))
+        {
+            header("Location: " . $_SERVER['PHP_SELF']);
+        exit; }
+    
 
     //envoi du message via phpmailer
     $bodyMail = "NOM : $nom $prenom<br>
@@ -35,13 +49,14 @@ if(isset($_POST['nom'])) {
             $mail->Password = 'hktdwfrt';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
-            
             $mail->isHTML(true);
-            $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
-            $mail->addReplyTo = $mail;
+
             $mail->addAddress('contact@deslitssurlaplace.fr');
             $mail->addCC('lesgensdelaplace@orange.fr');
-            $mail->Subject = 'Nouveau message de test';
+            $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
+            $mail->addReplyTo = $mail;
+            
+            $mail->Subject = 'Nouveau message';
             $mail->Body = $bodyMail;
             $mail->send();
             echo 'Mail envoyé';
@@ -62,6 +77,7 @@ if(isset($_SESSION['message_sent'])) {
     $send_message = "MESSAGE ENVOYÉ";
     $modal_open = true;
     unset($_SESSION['message_sent']);
+    unset($_SESSION['csrf_token']);
 }
 
 ?>
