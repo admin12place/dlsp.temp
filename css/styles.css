@@ -548,10 +548,16 @@ footer .menus-footer .site-description,
 footer .menus-footer .main-menu-footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: clamp(150px, 33.33%, 350px);
+  justify-content: center;
+  width: -moz-fit-content;
+  width: fit-content;
   max-height: 280px;
   padding: 1vw;
+}
+footer .menus-footer .site-description .footer-left-desc,
+footer .menus-footer .main-menu-footer .footer-left-desc {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 footer .menus-footer .site-description .logo-left,
 footer .menus-footer .main-menu-footer .logo-left {
@@ -573,6 +579,9 @@ footer .menus-footer .logo-partenaires {
   align-items: center;
   justify-content: space-around;
   width: clamp(150px, 43.33%, 500px);
+}
+footer .menus-footer .logo-partenaires span div {
+  transform: scale(0.9);
 }
 footer .menus-footer .logo-partenaires span {
   display: block;

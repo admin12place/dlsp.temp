@@ -567,10 +567,13 @@ footer {
         .main-menu-footer {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            width: clamp(150px, 33.33%, 350px);
+            justify-content: center;
+            width: fit-content;
             max-height: 280px;
             padding: 1vw;
+            .footer-left-desc {
+               height: fit-content;
+            }
             .logo-left {
                 float: left;
                 margin-right: 10px;
@@ -590,6 +593,9 @@ footer {
             align-items: center;
             justify-content: space-around;
             width: clamp(150px, 43.33%, 500px);
+            span div{
+                transform: scale(0.9);
+            }
 
             span {
                 display: block;
