@@ -172,14 +172,18 @@ setInterval(slideCards, 1000);
 
 const modal = document.getElementById('modal-contact');
 const openBtn = document.getElementById('open-contact-modal');
+const headerOpenBtn = document.querySelector('.header-mail');
 const closeBtn = document.getElementById('close-contact-modal');
 const submitForm = document.getElementById('modal-contact-form');
 const submitBtn = document.getElementById('submit-modal-contact');
 
-
 const modalOpen = document.body.dataset.modalOpen;
 
         openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+		headerOpenBtn.addEventListener('click', () => {
             modal.classList.add('active');
         });
 
