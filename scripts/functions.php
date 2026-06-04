@@ -163,9 +163,9 @@ $biking_text = 'La labellisation <a class="text-link" href="https://www.franceve
 
 $mail_dest = "lesgensdelaplace@orange.fr";
 
-$footerText = 'Lorem ipsum dolor sit amet. Et ullam reiciendis et asperiores Quis id recusandae libero ut galisum voluptatem qui omnis nihil. Ut explicabo 
-omnis eos cupiditate voluptas est eligendi rerum sit minus velit et porro repellat et voluptas nihil. Et quia explicabo quo dolore nulla in eligendi nihil 
-sit temporibus perspiciatis ab laborum provident ea tempore placeat.';
+$footerText = 'SAS Les gens de la place<br/>
+                12 place de la croix 34600 Hérépian<br/>
+                RCS Béziers 441 249 000 00015';
                 //FONCTIONS SPÉCIFIQUES
     
 ?>
