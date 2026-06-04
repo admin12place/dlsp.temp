@@ -4,9 +4,6 @@
 <?php
 session_start();
 
-//echo PHP_VERSION;
-//$_SESSION['csrf_token'] = bin2hex(random_bytes(32));(version php7 et >)
-//$_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
 $send_message = "ENVOYEZ VOTRE MESSAGE";
 $modal_open = false;
 
@@ -119,6 +116,15 @@ if(isset($_SESSION['message_sent'])) {
         </script>
 
     </head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVGWYFS564"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-TVGWYFS564');
+    </script>
+
 
     <body id="home" data-modal-open="<?php echo $modal_open ? 'true' : 'false'; ?>">
         <header id="header-type" class="container-logo-menu">
