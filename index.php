@@ -49,7 +49,7 @@ if(isset($_POST['nom'])) {
             $mail->isHTML(true);
 
             $mail->addAddress('contact@deslitssurlaplace.fr');
-            $mail->addCC('lesgensdelaplace@orange.fr');
+            $mail->addCC('lesgensdelaplace@orange.fr', '0641614344@deslitssurlaplace.fr');
             $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
             $mail->addReplyTo = $mail;
             
