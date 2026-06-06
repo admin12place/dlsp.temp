@@ -592,14 +592,18 @@ footer {
             display: flex;
             align-items: center;
             justify-content: space-around;
-            width: clamp(150px, 43.33%, 500px);
+            width: clamp(150px, 60%, 600px);
             span div{
                 transform: scale(0.9);
             }
 
             span {
                 display: block;
-                width: 20%;
+                min-width: 20%;
+                margin: 0 5px;
+                .force-width {
+                    justify-content: contain;
+                }
                 a img{
                     width: 100%;
                     height: auto;

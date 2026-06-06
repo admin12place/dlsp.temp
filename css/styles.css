@@ -578,14 +578,18 @@ footer .menus-footer .logo-partenaires {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: clamp(150px, 43.33%, 500px);
+  width: clamp(150px, 60%, 600px);
 }
 footer .menus-footer .logo-partenaires span div {
   transform: scale(0.9);
 }
 footer .menus-footer .logo-partenaires span {
   display: block;
-  width: 20%;
+  min-width: 20%;
+  margin: 0 5px;
+}
+footer .menus-footer .logo-partenaires span .force-width {
+  justify-content: contain;
 }
 footer .menus-footer .logo-partenaires span a img {
   width: 100%;
