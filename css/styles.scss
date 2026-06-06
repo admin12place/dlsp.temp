@@ -73,6 +73,10 @@ p .like_paragraf {
     white-space: nowrap;
 }
 
+.only-mobile {
+    display: none;
+    }    
+
 .center {
     text-align: center;
 }
@@ -335,9 +339,9 @@ header {
             }
         }
     }
-.only-mobile {
-    display: none;
-    }    
+    .only-mobile {
+        display: none;
+    }
 }
 
 #extras {
@@ -539,6 +543,15 @@ header {
             }
         }
     }
+    .widgets-mobile {
+        width: clamp(150px, 6vw, 230px);
+        a {
+            display: block;
+            img {
+                width: 100%;
+            }
+        }
+    }
 }
 
 footer {
@@ -689,6 +702,9 @@ footer {
         .menus-footer{
             display: none;
         }
+    }
+    .only-mobile {
+        display: block;
     }
 }
 

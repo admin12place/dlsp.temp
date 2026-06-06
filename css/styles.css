@@ -58,6 +58,10 @@ p .like_paragraf {
   white-space: nowrap;
 }
 
+.only-mobile {
+  display: none;
+}
+
 .center {
   text-align: center;
 }
@@ -519,6 +523,15 @@ header .main-menu ul.menu-items li a .icons:hover {
   opacity: 0.5;
   transform: scale(0.85);
 }
+#join-us .widgets-mobile {
+  width: clamp(150px, 6vw, 230px);
+}
+#join-us .widgets-mobile a {
+  display: block;
+}
+#join-us .widgets-mobile a img {
+  width: 100%;
+}
 
 footer {
   width: 80%;
@@ -662,6 +675,9 @@ footer ul li {
   }
   footer .menus-footer {
     display: none;
+  }
+  .only-mobile {
+    display: block;
   }
 }
 @media (max-width: 768px) {

@@ -91,6 +91,9 @@ if(isset($_SESSION['message_sent'])) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+        
+        <link rel="preload" href="/images/20260624david0273.webp" as="image"><!--pré-chargement du header hero en bg-->
+        
         <!--Meta SEO tags-->
         <meta name="title" content="Des lits sur la place | Chambres d'hôtes de charme à Hérépian | Hérault | Orb | Parc du Haut-Languedoc">
         <meta name="keywords" content="Chambres d'hôtes Hérépian, hôtel classé Hérault, Des lits sur la place, Bed an Breakfast Hérépian, 
@@ -298,6 +301,10 @@ if(isset($_SESSION['message_sent'])) {
                         <li>Gare de Bédarieux à 3 km</li>
                     </div>
                 </div>
+
+                <span class="widgets-mobile only-mobile">
+                    <?php include './templates/googleLink.php'; ?>
+                </span>
                 
                 <div class="contact-form"><?php include './templates/modalContact.php'; ?></div>
                 
