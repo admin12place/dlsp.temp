@@ -22,3 +22,9 @@
 <nav class="main-menu">
     <?php require 'structure/main-menu.php'; ?>
 </nav>
+
+<nav class="burger-menu" aria-label="Ouvrir le menu">
+	<span></span>
+	<span></span>
+	<span></span>
+</nav>

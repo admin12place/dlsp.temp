@@ -225,3 +225,22 @@ function nextRoomSlide() {
 
     imgRoomSlide[slideIndex].classList.add('active');
 }
+
+/*****************MENU BURGER*****************/
+
+const burgerMenu = document.querySelector('.burger-menu');
+const mainMenu = document.querySelector('.menu-items'); 
+
+burgerMenu.addEventListener('click', () => {
+	burgerMenu.classList.add('undisplayed');
+	mainMenu.classList.add('displayed');
+})
+
+document.addEventListener('click', (e) => {
+	if (!burgerMenu.contains(e.target)){
+		mainMenu.classList.remove('displayed');
+		burgerMenu.classList.remove('undisplayed');
+		
+	}
+})
+

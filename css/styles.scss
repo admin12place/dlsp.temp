@@ -218,6 +218,12 @@ header {
             .header-mail {
                 .icons {
                     width: clamp(35px, 3vw, 50px);
+                    transition: 0.5s ease;
+                    &:hover {
+                        transform: scale(1.2);
+                        color: $green-green;
+                        opacity: 0.5; 
+                    }
                 }
             }
         }
@@ -247,6 +253,33 @@ header {
                     
                 }
             }
+        }
+    }
+    .burger-menu {
+        display: none;
+        position: fixed;
+        top: 4vw;
+        right: 4.3vw;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 30px;
+        height: 40px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: 0.5s ease;
+        span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            margin: 0;
+            background-color: $black-black;
+            border-radius: 5px;
+        }
+        &:hover {
+            transform: scale(1.2);
         }
     }
 }
@@ -545,11 +578,16 @@ header {
     }
     .widgets-mobile {
         width: clamp(150px, 6vw, 230px);
+        transition: 0.5s ease;
         a {
             display: block;
             img {
                 width: 100%;
             }
+        }
+        &:hover {
+            transform: scale(1.1);
+            transition: 0.5s ease;
         }
     }
 }
@@ -721,27 +759,47 @@ footer {
             align-items: center;
             gap: 15px;
         }
-        .main-menu {
-            margin-top: 1em;
-            ul.menu-items {
+        .main-menu{
+            .menu-items {
+                position: fixed;
+                top: 2vw;
+                right: 4vw;
                 display: flex;
-                flex-wrap: wrap; /*retour à la ligne */
-                gap: 10px;
-                li {
-                    flex: 1 1 200px;
-                    text-align: center;
-                    border-radius: 25px;
-                    max-width: 200px;
-                }
-                li.display-mobile {
-                    display: inline;
-                }
-                li.display-laptop {
-                    display: none;
-
+                flex-direction: column;
+                visibility: 0;
+                opacity: 0;
+                &.displayed {
+                    display: flex;
+                    flex-direction: column;
+                    transition: 1s ease;
+                    visibility: 1;
+                    opacity: 1;
+                    height: auto;
+                    border: 1px solid $white-cream;
+                    border-radius: 3vw;
+                    background-color: rgb(252, 254, 253, 0.7);
+                    padding: 2vw;
+                    gap: 20px;
+                    z-index: 999;
+                    a {
+                        font-weight: 600;
+                    }
                 }
             }
         }
+        .burger-menu {
+            display: flex;
+            z-index: 999;
+            visibility: 1;
+            opacity: 1;
+            transition: 1s ease;
+            &.undisplayed {
+                visibility: 0;
+                opacity: 0;
+            }
+        }
+ 
+            
     }
     #rooms {
         .impair-room, .pair-room {
