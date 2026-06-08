@@ -16,7 +16,7 @@ body {
   font-style: normal;
   background-color: #fcfefd;
   width: 95%;
-  max-width: 1700px;
+  max-width: 1440px;
   margin: auto;
 }
 
@@ -331,9 +331,10 @@ header .burger-menu:hover {
   display: flex;
   justify-content: flex-start;
   gap: 2vw;
+  width: 60%;
 }
 #rooms .room-contain .impair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .pair-room .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .article-mobile .text-room-contain .room-icons img.mini-icons, #rooms .room-contain .only-mobile .text-room-contain .room-icons img.mini-icons {
-  width: 5vw;
+  width: 3.5vw;
 }
 #rooms .room-contain .impair-room .img-room-contain, #rooms .room-contain .pair-room .img-room-contain, #rooms .room-contain .article-mobile .img-room-contain, #rooms .room-contain .only-mobile .img-room-contain {
   width: 55%;

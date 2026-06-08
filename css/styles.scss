@@ -31,7 +31,7 @@ body {
 
     //positionnement & taille
     width: 95%;
-    max-width: 1700px;
+    max-width: 1440px;
     margin: auto;
 
 }
@@ -347,8 +347,9 @@ header {
                     display: flex;
                     justify-content: flex-start;
                     gap: 2vw;
+                    width: 60%;
                     img.mini-icons {
-                        width: 5vw;
+                        width: 3.5vw;
                     }
                 }
             }
