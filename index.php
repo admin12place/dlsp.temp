@@ -53,6 +53,9 @@ if(isset($_POST['nom'])) {
             $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
             $mail->addReplyTo = $mail;
             
+            $mail->CharSet = 'UTF-8';
+            $mail->Encoding = 'base64';
+            
             $mail->Subject = 'Nouveau message';
             $mail->Body = $bodyMail;
             $mail->send();
