@@ -49,7 +49,8 @@ if(isset($_POST['nom'])) {
             $mail->isHTML(true);
 
             $mail->addAddress('contact@deslitssurlaplace.fr');
-            $mail->addCC('lesgensdelaplace@orange.fr', '0641614344@deslitssurlaplace.fr');
+            $mail->addCC('lesgensdelaplace@orange.fr');
+            $mail->addCC('0641614344@deslitssurlaplace.fr');
             $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
             $mail->addReplyTo = $mail;
             
@@ -98,12 +99,11 @@ if(isset($_SESSION['message_sent'])) {
         <link rel="preload" href="/images/20260624david0273.webp" as="image"><!--pré-chargement du header hero en bg-->
         
         <!--Meta SEO tags-->
-        <meta name="title" content="Des lits sur la place | Chambres d'hôtes de charme à Hérépian | Hérault | Orb | Parc du Haut-Languedoc">
-        <meta name="keywords" content="Chambres d'hôtes Hérépian, hôtel classé Hérault, Des lits sur la place, Bed an Breakfast Hérépian, 
-        hôtel Grand Orb, chambres de luxe, accueil vélo Hérault">
+        <meta name="title" content="Des lits sur la place | Hôtel à Hérépian | Chambres d'hôtes de charme à Hérépian | Hérault | Orb | Parc du Haut-Languedoc">
+        <meta name="keywords" content="Chambres d'hôtes Hérépian, hôtel Hérépian, hotel herepian, hôtel Bédarieux, hôtel Lamalou, Des lits sur la place, Bed an Breakfast Hérépian, 
+        hôtel Grand Orb, chambres de luxe, accueil vélo, hébergement">
         <meta name="description" content="Des lits sur la place, chambres d'hôtes de caractère à Hérépian, au coeur du Parc du Haut-Languedoc vous 
-        accueille toute l'année. En couple ou en famille, pour le travail ou pour les loisirs, venez profiter du calme et du charme d'un
-        village typiquement méridional.">
+        accueille toute l'année. Appelez Marion au +33 (0)6 41 61 43 44">
         <meta name="author" content="Des lits sur la place - Marion Deloulay Kleitz et Thierry Deloulay">
         <meta name="robots" content="index, follow">
 
@@ -261,7 +261,7 @@ if(isset($_SESSION['message_sent'])) {
                     <h3 class="section-title">L'ACCUEIL DES CYCLISTES</h3>
 
                 <article class="biking-article">
-                    <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Randovelo34.fr - Les Bardenas realesS"/>
+                    <img class="slider-image" src="/images/slider/20241130133522T.webp" alt="Randovelo34.fr - Les Bardenas reales"/>
                     <p class="main-text"><?php echo $biking_text;?></p>
                 </article>
                 <span class="divite"><img src="./assets/1131825.png" alt="Image de séparation"/></span>

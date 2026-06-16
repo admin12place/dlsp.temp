@@ -73,7 +73,7 @@ p .like_paragraf {
     white-space: nowrap;
 }
 
-.only-mobile {
+.only-mobile, .header-logo-mobile {
     display: none;
     }    
 
@@ -177,10 +177,12 @@ header {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        a img{
-            width: clamp(6rem, 8vw, 9rem);
-            height: auto;
-        }
+        a {
+            img {
+                width: clamp(6rem, 8vw, 9rem);
+                height: auto;
+            }
+        }   
         .titles {
             display: flex;
             flex-direction: column;
@@ -199,30 +201,44 @@ header {
         .details {
             font-size: clamp( 14px, 1vw, 14px);
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            .adresse {
-            text-align: center;
+            &::before {
+                content: "";
+                width: 82px;
+                height: 82px;
+                background-image: url("../assets/accueil_velo_icon.webp");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
             }
-            .phone {
+            .content-details {
                 display: flex;
-                flex-direction: row;
-                align-items:flex-end;
-                margin-bottom: 5px;
-                .phone-number {
-                    font-size: clamp(15px, 1.5vw, 18px);
-                    font-weight: 700;
+                flex-direction: column;
+                .adresse {
+                text-align: center;
                 }
-            }
-            .header-mail {
-                .icons {
-                    width: clamp(35px, 3vw, 50px);
-                    transition: 0.5s ease;
-                    &:hover {
-                        transform: scale(1.2);
-                        color: $green-green;
-                        opacity: 0.5; 
+                .phone {
+                    display: flex;
+                    flex-direction: row;
+                    align-items:flex-end;
+                    margin-bottom: 5px;
+                    .phone-number {
+                        font-size: clamp(15px, 1.5vw, 18px);
+                        font-weight: 700;
+                    }
+                }
+                .header-mail {
+                    display: flex;
+                    justify-content: center;
+                    .icons {
+                        width: clamp(35px, 3vw, 50px);
+                        transition: 0.5s ease;
+                        &:hover {
+                            transform: scale(1.2);
+                            color: $green-green;
+                            opacity: 0.5; 
+                        }
                     }
                 }
             }
@@ -474,8 +490,8 @@ header {
         &::before {
             content: "";
             display: block;
-            width: 42px;
-            height: 42px;
+            width: 82px;
+            height: 82px;
             background-image: url("../assets/accueil_velo_icon.webp");
             background-size: contain;
             background-repeat: no-repeat;
@@ -754,6 +770,9 @@ footer {
 
     header {
         padding: 20px;
+        .details::before {
+            display: none;
+        }
         .logo-title{
             display: flex;
             flex-direction: column;
@@ -801,7 +820,15 @@ footer {
                 opacity: 0;
             }
         }
- 
+    .header-logo-mobile {
+        display: block;
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        a img {
+            width: 100px;
+        }
+    }
             
     }
     #rooms {

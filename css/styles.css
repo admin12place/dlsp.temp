@@ -57,7 +57,7 @@ p .like_paragraf {
   white-space: nowrap;
 }
 
-.only-mobile {
+.only-mobile, .header-logo-mobile {
   display: none;
 }
 
@@ -184,28 +184,44 @@ header .logo-title .titles h2 {
 header .logo-title .details {
   font-size: clamp(14px, 1vw, 14px);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-header .logo-title .details .adresse {
+header .logo-title .details::before {
+  content: "";
+  width: 82px;
+  height: 82px;
+  background-image: url("../assets/accueil_velo_icon.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+header .logo-title .details .content-details {
+  display: flex;
+  flex-direction: column;
+}
+header .logo-title .details .content-details .adresse {
   text-align: center;
 }
-header .logo-title .details .phone {
+header .logo-title .details .content-details .phone {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   margin-bottom: 5px;
 }
-header .logo-title .details .phone .phone-number {
+header .logo-title .details .content-details .phone .phone-number {
   font-size: clamp(15px, 1.5vw, 18px);
   font-weight: 700;
 }
-header .logo-title .details .header-mail .icons {
+header .logo-title .details .content-details .header-mail {
+  display: flex;
+  justify-content: center;
+}
+header .logo-title .details .content-details .header-mail .icons {
   width: clamp(35px, 3vw, 50px);
   transition: 0.5s ease;
 }
-header .logo-title .details .header-mail .icons:hover {
+header .logo-title .details .content-details .header-mail .icons:hover {
   transform: scale(1.2);
   color: #226b4e;
   opacity: 0.5;
@@ -453,8 +469,8 @@ header .burger-menu:hover {
 #biking h3.section-title::before {
   content: "";
   display: block;
-  width: 42px;
-  height: 42px;
+  width: 82px;
+  height: 82px;
   background-image: url("../assets/accueil_velo_icon.webp");
   background-size: contain;
   background-repeat: no-repeat;
@@ -725,6 +741,9 @@ footer ul li {
   header {
     padding: 20px;
   }
+  header .details::before {
+    display: none;
+  }
   header .logo-title {
     display: flex;
     flex-direction: column;
@@ -769,6 +788,15 @@ footer ul li {
   header .burger-menu.undisplayed {
     visibility: 0;
     opacity: 0;
+  }
+  header .header-logo-mobile {
+    display: block;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+  }
+  header .header-logo-mobile a img {
+    width: 100px;
   }
   #rooms .impair-room, #rooms .pair-room {
     display: none;
