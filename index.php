@@ -35,37 +35,35 @@ if(isset($_POST['nom'])) {
                 TELEPHONE : $phone<br>
                 MESSAGE : $message";
 
-    $mail = new PHPMailer(true);
+    $mailtosend = new PHPMailer(true);
 
         try {
 
-            $mail->isSMTP();
-            $mail->Host = 'smtp.texio.net';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'smtp@deslitssurlaplace.fr';
-            $mail->Password = 'hktdwfrt';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port = 587;
-            $mail->isHTML(true);
+        $mailtosend->isSMTP();
+        $mailtosend->Host = 'smtp.texio.net';
+        $mailtosend->SMTPAuth = true;
+        $mailtosend->Username = 'smtp@deslitssurlaplace.fr';
+        $mailtosend->Password = 'hktdwfrt-DISABLE';
+        $mailtosend->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mailtosend->Port = 587;
+        $mailtosend->isHTML(true);
 
-            $mail->addAddress('contact@deslitssurlaplace.fr');
-            $mail->addCC('lesgensdelaplace@orange.fr');
-            $mail->addCC('0641614344@deslitssurlaplace.fr');
-            $mail->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
-            $mail->addReplyTo = $mail;
+        $mailtosend->addAddress('contact@deslitssurlaplace.fr');
+        $mailtosend->addCC('lesgensdelaplace@orange.fr');
+        $mailtosend->addCC('0641614344@deslitssurlaplace.fr');
+        $mailtosend->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
+        $mailtosend->addReplyTo = ($mail);
             
-            $mail->CharSet = 'UTF-8';
-            $mail->Encoding = 'base64';
+        $mailtosend->CharSet = 'UTF-8';
+        $mailtosend->Encoding = 'base64';
             
-            $mail->Subject = 'Nouveau message';
-            $mail->Body = $bodyMail;
-            $mail->send();
+        $mailtosend->Subject = 'Nouveau message';
+        $mailtosend->Body = $bodyMail;
+        $mailtosend->send();
             echo 'Mail envoyé';
         }
 
-        catch (Exception $e) {
-            echo $mail->ErrorInfo;
-        }
+        catch (Exception $e) { echo $mail->ErrorInfo; }
     //fin de routine
 
     $_SESSION['message_sent'] = true;
