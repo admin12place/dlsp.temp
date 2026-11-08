@@ -12,65 +12,173 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
-if(isset($_POST['nom'])) {
-    $nom = trim ( htmlspecialchars($_POST['nom']));
-    $prenom = trim ( htmlspecialchars($_POST['prenom']));
-    $mail = trim ( htmlspecialchars($_POST['mail']));
-    $phone = trim ( htmlspecialchars($_POST['phone']));
-    $message = trim ( htmlspecialchars($_POST['message']));
-    $adress = trim ( htmlspecialchars($_POST['adress']));
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nom'])) {
 
-    //sécurisation de l'expédition
-    if ( !isset($_POST['csrf_token']) || 
-    !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token']) || 
-    !empty(trim($adress)))
-        {
-            header("Location: " . $_SERVER['PHP_SELF']);
-        exit; }
-    
+    // 1. Vérification CSRF
+    $token = $_POST['csrf_token'] ?? '';
 
-    //envoi du message via phpmailer
-    $bodyMail = "NOM : $nom $prenom<br>
-                MAIL : $mail<br>
-                TELEPHONE : $phone<br>
-                MESSAGE : $message";
+    if (
+        !is_string($token) ||
+        empty($_SESSION['csrf_token']) ||
+        !hash_equals($_SESSION['csrf_token'], $token)
+    ) {
+        http_response_code(403);
+        exit('Formulaire invalide.');
+    }
 
+    // 2. Champ piège anti-robots
+    $website = $_POST['website'] ?? '';
+
+    if (!is_string($website) || trim($website) !== '') {
+        // Ne pas révéler au robot qu'il a été détecté
+        http_response_code(400);
+        exit;
+    }
+
+    // 3. Récupération des données
+    $nom     = trim($_POST['nom'] ?? '');
+    $prenom  = trim($_POST['prenom'] ?? '');
+    $mail    = trim($_POST['mail'] ?? '');
+    $phone   = trim($_POST['phone'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+
+    // Vérifier que tous les champs sont des chaînes
+    foreach ([$nom, $prenom, $mail, $phone, $message] as $value) {
+        if (!is_string($value)) {
+            http_response_code(400);
+            exit('Données invalides.');
+        }
+    }
+
+    // 4. Validation des champs
+    if (
+        $nom === '' ||
+        $prenom === '' ||
+        !filter_var($mail, FILTER_VALIDATE_EMAIL) ||
+        strlen($mail) > 254 ||
+        $phone === '' ||
+        strlen($phone) > 40 ||
+        $message === '' ||
+        strlen($message) > 10000
+    ) {
+        http_response_code(400);
+        exit('Veuillez vérifier les champs du formulaire.');
+    }
+
+    // Empêcher les injections dans les en-têtes de mail
+    if (preg_match('/[\r\n]/', $mail)) {
+        http_response_code(400);
+        exit('Adresse e-mail invalide.');
+    }
+
+    // 5. Limitation simple par session :
+    // maximum 3 envois en 10 minutes
+    $now = time();
+    $window = 600;
+
+    if (
+        !isset($_SESSION['contact_sends']) ||
+        !is_array($_SESSION['contact_sends'])
+    ) {
+        $_SESSION['contact_sends'] = [];
+    }
+
+    $_SESSION['contact_sends'] = array_values(array_filter(
+    $_SESSION['contact_sends'],
+    function ($time) use ($now, $window) {
+        return is_int($time) && $time > $now - $window;
+        }
+    ));
+
+    if (count($_SESSION['contact_sends']) >= 3) {
+        http_response_code(429);
+        exit('Trop de tentatives. Veuillez réessayer plus tard.');
+    }
+
+    // Enregistrer la tentative avant l'envoi
+    $_SESSION['contact_sends'][] = $now;
+
+    // 6. Préparer le corps HTML en échappant les données
+    $safeNom = htmlspecialchars(
+        $nom, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'
+    );
+    $safePrenom = htmlspecialchars(
+        $prenom, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'
+    );
+    $safeMail = htmlspecialchars(
+        $mail, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'
+    );
+    $safePhone = htmlspecialchars(
+        $phone, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'
+    );
+    $safeMessage = nl2br(htmlspecialchars(
+        $message, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8'
+    ));
+
+    $bodyMail = "
+        <strong>NOM :</strong> $safeNom $safePrenom<br>
+        <strong>MAIL :</strong> $safeMail<br>
+        <strong>TÉLÉPHONE :</strong> $safePhone<br>
+        <strong>MESSAGE :</strong><br>$safeMessage
+    ";
+
+    // 7. Envoi avec PHPMailer
     $mailtosend = new PHPMailer(true);
 
-        try {
-
+    try {
         $mailtosend->isSMTP();
-        $mailtosend->Host = 'smtp.texio.net';
+        $mailtosend->Host = 'vert.o2switch.net';
         $mailtosend->SMTPAuth = true;
-        $mailtosend->Username = 'smtp@deslitssurlaplace.fr';
-        $mailtosend->Password = 'hktdwfrt-DISABLE';
-        $mailtosend->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mailtosend->Port = 587;
+
+        $mailtosend->Username = 'contact@deslitssurlaplace.fr';
+        $mailtosend->Password = 'Deslitssurlaplace@7834';
+        $mailtosend->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mailtosend->Port = 465;
+        
+        $mailtosend->Timeout = 10;
+        $mailtosend->Timelimit = 20;
+
+        $mailtosend->CharSet = 'UTF-8';
         $mailtosend->isHTML(true);
 
-        $mailtosend->addAddress('contact@deslitssurlaplace.fr');
-        $mailtosend->addCC('lesgensdelaplace@orange.fr');
-        $mailtosend->addCC('0641614344@deslitssurlaplace.fr');
-        $mailtosend->setFrom('contact@deslitssurlaplace.fr', 'deslitssurlaplace.fr');
-        $mailtosend->addReplyTo = ($mail);
-            
-        $mailtosend->CharSet = 'UTF-8';
-        $mailtosend->Encoding = 'base64';
-            
+        $mailtosend->setFrom(
+            'contact@deslitssurlaplace.fr',
+            'deslitssurlaplace.fr'
+        );
+
+        $mailtosend->addAddress(
+            'contact@deslitssurlaplace.fr'
+        );
+        $mailtosend->addCC(
+            'lesgensdelaplace@orange.fr'
+        );
+        $mailtosend->addCC(
+            '0641614344@deslitssurlaplace.fr'
+        );
+
+        $mailtosend->addReplyTo($mail, "$prenom $nom");
+
         $mailtosend->Subject = 'Nouveau message';
         $mailtosend->Body = $bodyMail;
-        $mailtosend->send();
-            echo 'Mail envoyé';
-        }
 
-        catch (Exception $e) { echo $mail->ErrorInfo; }
-    //fin de routine
+        $mailtosend->send();
+
+        echo 'Mail envoyé';
+
+    } catch (\PHPMailer\PHPMailer\Exception $e) {
+        error_log('Erreur PHPMailer : ' . $e->getMessage());
+        http_response_code(500);
+        echo "Une erreur est survenue lors de l'envoi.";
+    }
 
     $_SESSION['message_sent'] = true;
 
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
+/*fin de traitement du formulaire*/
+    
+
 
 if(isset($_SESSION['message_sent'])) {
     $send_message = "MESSAGE ENVOYÉ";

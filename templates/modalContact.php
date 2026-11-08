@@ -1,8 +1,8 @@
 <?php
-session_start();
-//echo PHP_VERSION;
-//$_SESSION['csrf_token'] = bin2hex(random_bytes(32));(version php7 et >)
-$_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
+if (empty($_SESSION['csrf_token'])) {
+    //$_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    $_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
+}
 ?>
 
 <section id="modal-contact" class="">
@@ -31,8 +31,8 @@ $_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(32));
                     <input type="text" id="phone" name="phone" required>
 
                     <!--Champs cachés sécurité-->
-                        <input class="nospam" type="text" id="adress" name="adress">
-                        <input type="text" class ="nospam" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
+                        <input class="nospam" type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        <input type="hidden" name="csrf_token" value="<?= htmlspecialchars( $_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>" >
                     <!---->
 
                 </div>

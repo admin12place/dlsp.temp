@@ -57,8 +57,12 @@
 #modal-contact .modal-form form fieldset .form-field input[type=submit]:hover, #modal-contact .modal-form form fieldset .form-field button:hover {
   cursor: pointer;
 }
-#modal-contact .modal-form form fieldset .form-field input.nospam {
-  display: none;
+#modal-contact .modal-form form fieldset .form-field .nospam {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 #modal-contact .modal-form form fieldset .form-field button {
   border-radius: 10px;
